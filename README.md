@@ -16,6 +16,8 @@
 |USB|RTL8812 [B] U| | |⛔|
 |USB|RTL8812 [C] U| | |⛔|
 ||||||
+|USB|RTL8814 [A] U|PCBA|<img src="https://github.com/user-attachments/assets/caaf1a45-e727-49c7-9f23-68beabce392b" width="200"/>|⏳|
+||||||
 |USB|RTL8821 [A] U| | |⛔|
 |USB|RTL8821 [C] U|Dongle|<img src="https://github.com/user-attachments/assets/63da93f4-3730-4740-9a8c-fafb8200a998" width="200"/>|⏳|
 ||||||
