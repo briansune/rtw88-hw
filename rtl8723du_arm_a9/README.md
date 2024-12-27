@@ -428,7 +428,6 @@ Accepted connection from 192.168.1.3, port 59012
 [ ID] Interval           Transfer     Bandwidth       Retr
 [  5]   0.00-133.00 sec   471 MBytes  29.7 Mbits/sec  163             sender
 [  5]   0.00-133.00 sec  0.00 Bytes  0.00 bits/sec                  receiver
-iperf3: the client has terminated
 ```
 
 </details>
@@ -460,7 +459,7 @@ opt router 192.168.175.1
 
 #### Start AP Test
 ```
-sudo hostapd /etc/hostapd/hostapd.conf -B
+sudo hostapd -dd -e /dev/urandom /etc/hostapd/hostapd.conf -B
 Configuration file: /etc/hostapd/hostapd.conf
 Using interface wlan0 with hwaddr 90:de:80:88:2c:f1 and ssid "AP-TEST"
 wlan0: interface state UNINITIALIZED->ENABLED
@@ -530,7 +529,6 @@ wlan0: AP-ENABLED
 [ ID] Interval           Transfer     Bandwidth       Retr
 [  5]   0.00-50.00  sec   164 MBytes  27.5 Mbits/sec   23             sender
 [  5]   0.00-50.00  sec  0.00 Bytes  0.00 bits/sec                  receiver
-iperf3: the client has terminated
 ```
 
 </details>
