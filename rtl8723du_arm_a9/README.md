@@ -2,6 +2,10 @@
 
 ### Test Gear
 
+|Test Board|USB Dongle HW|
+|-|-|
+|<img src="https://github.com/user-attachments/assets/3cc4f29a-6244-462f-8737-71c91d3a321e" height="400"/>|<img src="https://github.com/user-attachments/assets/3e6e9965-48a4-4929-bc2c-7ab8bd36ca2c" height="400"/>|
+
 ```
 Architecture:        armv7l
 Byte Order:          Little Endian
