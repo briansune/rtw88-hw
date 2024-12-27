@@ -507,7 +507,7 @@ opt router 192.168.175.1
 ```
 sudo hostapd -dd -e /dev/urandom /etc/hostapd/hostapd.conf -B
 Configuration file: /etc/hostapd/hostapd.conf
-Using interface wlan0 with hwaddr 90:de:80:88:2c:f1 and ssid "AP-TEST"
+Using interface wlan0 with hwaddr 48:8f:4c:90:16:0a and ssid "AP-TEST"
 wlan0: interface state UNINITIALIZED->ENABLED
 wlan0: AP-ENABLED
 ```
