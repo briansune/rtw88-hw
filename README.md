@@ -7,7 +7,7 @@
 
 |Phy Interface|Chip #|HW Type|Driver Tree|HW Image|Status|Details|
 |:---:|:---|:---|:---:|:---:|---:|:---:|
-|USB|RTL8723 [D] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723du.ko|<p><img src="https://github.com/user-attachments/assets/7570044c-ef8e-49a7-9159-3d2053ef6aa1" width="200"/><p><img src="https://github.com/user-attachments/assets/2de36784-24e9-4c18-8ebd-92ce5fbc8eed" width="200"/>|<p>ARM - A9 🟢<p>ARM64 - A35 🟢<p>ARM64 - A53 ⏳<p>STA 🟢<p>AP 🟢| |
+|USB|RTL8723 [D] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723du.ko|<p><img src="https://github.com/user-attachments/assets/7570044c-ef8e-49a7-9159-3d2053ef6aa1" width="200"/><p><img src="https://github.com/user-attachments/assets/2de36784-24e9-4c18-8ebd-92ce5fbc8eed" width="200"/>|<p>ARM - A9 🟢<p>ARM64 - A35 🟢<p>ARM64 - A53 ⏳<p>STA 🟢<p>AP 🟢|[ARM A9](./rtl8723du_arm_a9)|
 ||||||||
 |USB|RTL8811 [A] U|Dongle||<img src="https://github.com/user-attachments/assets/7efc5f62-b470-47ac-85c2-8372cbe51a69" width="200"/>|⏳||
 |USB|RTL8811 [B] U|Module||<img src="https://github.com/user-attachments/assets/dfcff7d3-a2e6-4548-8e06-31029389fd31" width="200"/>|⏳||
