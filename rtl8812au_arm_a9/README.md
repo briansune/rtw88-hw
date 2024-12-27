@@ -4,7 +4,7 @@
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="" height="400"/>|<img src="" height="400"/>|
+|<img src="https://github.com/user-attachments/assets/026f090c-0aed-49ba-aeae-38b968fcf642" height="400"/>|<img src="https://github.com/user-attachments/assets/bd7b8813-3b1b-4868-8ca3-ae987c9269e9" height="400"/>|
 
 ```
 Architecture:        armv7l
