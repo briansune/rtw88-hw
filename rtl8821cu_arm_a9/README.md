@@ -377,7 +377,7 @@ Wiphy phy0
 ### iwconfig
 
 ```
-wlan0     IEEE 802.11  ESSID:"xellossfong"
+wlan0     IEEE 802.11  ESSID:""
           Mode:Managed  Frequency:2.412 GHz  Access Point: F8:6F:B0:0E:AE:E5
           Bit Rate=40.5 Mb/s   Tx-Power=20 dBm
           Retry short limit:7   RTS thr:off   Fragment thr:off
