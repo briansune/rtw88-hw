@@ -1,10 +1,10 @@
-# RTL8812AU USB Dongle Testing
+# RTL8821CU USB Dongle Testing
 
 ### Test Gear
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="https://github.com/user-attachments/assets/026f090c-0aed-49ba-aeae-38b968fcf642" height="400"/>|<img src="https://github.com/user-attachments/assets/bd7b8813-3b1b-4868-8ca3-ae987c9269e9" height="400"/>|
+|<img src="" height="400"/>|<img src="" height="400"/>|
 
 ```
 Architecture:        armv7l
@@ -28,30 +28,48 @@ The driver is loaded via "insmod"
 
 ```
 Module                  Size  Used by
-rtw_8812au             16384  0
-rtw_8812a              45056  1 rtw_8812au
-rtw_88xxa              32768  1 rtw_8812a
-rtw_usb                24576  1 rtw_8812au
-rtw_core              172032  3 rtw_8812a,rtw_usb,rtw_88xxa
+rtw_8821cu             16384  0
+rtw_8821c              90112  1 rtw_8821cu
+rtw_usb                24576  1 rtw_8821cu
+rtw_core              172032  2 rtw_usb,rtw_8821c
 
-[   89.562175] rtw_core: loading out-of-tree module taints kernel.
-[  101.202227] rtw_8812au 1-1.1:1.0: Firmware version 52.14.0, H2C version 0
-[  102.257255] usbcore: registered new interface driver rtw_8812au
-[  102.509604] usb 1-1.1: USB disconnect, device number 3
-[  102.814220] usb 1-1.1: new high-speed USB device number 4 using ci_hdrc
-[  102.968420] rtw_8812au 1-1.1:1.0: Firmware version 52.14.0, H2C version 0
+[    7.824265] usb 1-1.1: new high-speed USB device number 4 using ci_hdrc
+[    7.975110] usb 1-1.1: config 1 interface 1 altsetting 0 endpoint 0x3 has wMaxPacketSize 0, skipping
+[    7.975128] usb 1-1.1: config 1 interface 1 altsetting 0 endpoint 0x83 has wMaxPacketSize 0, skipping
+[    8.042703] Bluetooth: hci0: RTL: examining hci_ver=08 hci_rev=000c lmp_ver=08 lmp_subver=8821
+[    8.043657] Bluetooth: hci0: RTL: rom_version status=0 version=1
+[    8.043669] Bluetooth: hci0: RTL: loading rtl_bt/rtl8821c_fw.bin
+[    8.050267] Bluetooth: hci0: RTL: loading rtl_bt/rtl8821c_config.bin
+[    8.051370] Bluetooth: hci0: RTL: cfg_sz 10, total sz 21678
+[    8.462567] Bluetooth: hci0: RTL: fw version 0x826ca99e
+[  158.374162] rtw_core: loading out-of-tree module taints kernel.
+[  214.487282] rtw_8821cu 1-1.1:1.2: Firmware version 24.11.0, H2C version 12
+[  214.887370] usbcore: registered new interface driver rtw_8821cu
+```
+
+There is a possible issue could happen on ARM and other platform.
+
+If the USB is loaded as a disk. 
+
+Modify the rules, and the ID might be different (please replace with necessary)
+
+>vi /lib/udev/rules.d/40-usb_modeswitch.rules
 
 ```
+# Realtek 8211CU Wifi AC USB
+ATTR{idVendor}=="0bda", ATTR{idProduct}=="1a2b", RUN+="/usr/sbin/usb_modeswitch -K -v 0bda -p 1a2b"
+```
+
 ### Network Manager
 
 ```
 wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.168.1.25  netmask 255.255.252.0  broadcast 192.168.3.255
-        inet6 fe80::da2e:cde7:4ada:ff3b  prefixlen 64  scopeid 0x20<link>
-        ether 48:8f:4c:90:16:0a  txqueuelen 1000  (Ethernet)
-        RX packets 10  bytes 1368 (1.3 KB)
+        inet 192.168.1.26  netmask 255.255.252.0  broadcast 192.168.3.255
+        inet6 fe80::563d:3f8c:6e95:d48a  prefixlen 64  scopeid 0x20<link>
+        ether bc:fd:0c:4f:23:fe  txqueuelen 1000  (Ethernet)
+        RX packets 10  bytes 1602 (1.6 KB)
         RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 24  bytes 4266 (4.2 KB)
+        TX packets 28  bytes 4890 (4.8 KB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
@@ -60,11 +78,11 @@ wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```
    Speedtest by Ookla
 
-Idle Latency:    20.74 ms   (jitter: 23.98ms, low: 4.89ms, high: 44.08ms)
-    Download:    42.23 Mbps (data used: 55.9 MB)
-                118.37 ms   (jitter: 43.92ms, low: 5.47ms, high: 1835.10ms)
-      Upload:    35.97 Mbps (data used: 16.2 MB)
-                 87.69 ms   (jitter: 21.34ms, low: 14.24ms, high: 207.18ms)
+Idle Latency:     5.17 ms   (jitter: 2.94ms, low: 3.91ms, high: 7.89ms)
+    Download:    16.65 Mbps (data used: 29.1 MB)
+                 82.21 ms   (jitter: 37.39ms, low: 5.79ms, high: 557.92ms)
+      Upload:     6.57 Mbps (data used: 11.0 MB)
+                285.11 ms   (jitter: 72.98ms, low: 36.23ms, high: 645.93ms)
 ```
 ### Network Ping Tests
 
@@ -72,79 +90,60 @@ Idle Latency:    20.74 ms   (jitter: 23.98ms, low: 4.89ms, high: 44.08ms)
 
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-64 bytes from 8.8.8.8: icmp_seq=1 ttl=118 time=6.80 ms
-64 bytes from 8.8.8.8: icmp_seq=2 ttl=118 time=7.06 ms
-64 bytes from 8.8.8.8: icmp_seq=3 ttl=118 time=3.99 ms
-64 bytes from 8.8.8.8: icmp_seq=4 ttl=118 time=11.0 ms
-64 bytes from 8.8.8.8: icmp_seq=5 ttl=118 time=10.9 ms
-64 bytes from 8.8.8.8: icmp_seq=6 ttl=118 time=5.05 ms
-64 bytes from 8.8.8.8: icmp_seq=7 ttl=118 time=4.74 ms
-64 bytes from 8.8.8.8: icmp_seq=8 ttl=118 time=4.00 ms
-64 bytes from 8.8.8.8: icmp_seq=9 ttl=118 time=4.00 ms
-64 bytes from 8.8.8.8: icmp_seq=10 ttl=118 time=10.6 ms
-64 bytes from 8.8.8.8: icmp_seq=11 ttl=118 time=3.96 ms
-64 bytes from 8.8.8.8: icmp_seq=12 ttl=118 time=7.86 ms
-64 bytes from 8.8.8.8: icmp_seq=13 ttl=118 time=6.11 ms
-64 bytes from 8.8.8.8: icmp_seq=14 ttl=118 time=16.2 ms
-64 bytes from 8.8.8.8: icmp_seq=15 ttl=118 time=4.24 ms
-64 bytes from 8.8.8.8: icmp_seq=16 ttl=118 time=4.38 ms
-64 bytes from 8.8.8.8: icmp_seq=17 ttl=118 time=5.56 ms
-64 bytes from 8.8.8.8: icmp_seq=18 ttl=118 time=7.48 ms
-64 bytes from 8.8.8.8: icmp_seq=19 ttl=118 time=5.33 ms
-64 bytes from 8.8.8.8: icmp_seq=20 ttl=118 time=4.09 ms
-64 bytes from 8.8.8.8: icmp_seq=21 ttl=118 time=8.22 ms
-64 bytes from 8.8.8.8: icmp_seq=22 ttl=118 time=6.35 ms
-64 bytes from 8.8.8.8: icmp_seq=23 ttl=118 time=8.57 ms
-64 bytes from 8.8.8.8: icmp_seq=24 ttl=118 time=6.47 ms
-64 bytes from 8.8.8.8: icmp_seq=25 ttl=118 time=4.35 ms
-64 bytes from 8.8.8.8: icmp_seq=26 ttl=118 time=5.47 ms
-64 bytes from 8.8.8.8: icmp_seq=27 ttl=118 time=4.10 ms
-64 bytes from 8.8.8.8: icmp_seq=28 ttl=118 time=4.09 ms
-64 bytes from 8.8.8.8: icmp_seq=29 ttl=118 time=16.9 ms
-64 bytes from 8.8.8.8: icmp_seq=30 ttl=118 time=11.7 ms
-64 bytes from 8.8.8.8: icmp_seq=31 ttl=118 time=4.47 ms
-64 bytes from 8.8.8.8: icmp_seq=32 ttl=118 time=6.21 ms
-64 bytes from 8.8.8.8: icmp_seq=33 ttl=118 time=6.35 ms
-64 bytes from 8.8.8.8: icmp_seq=34 ttl=118 time=4.34 ms
-64 bytes from 8.8.8.8: icmp_seq=35 ttl=118 time=3.82 ms
-64 bytes from 8.8.8.8: icmp_seq=36 ttl=118 time=13.4 ms
-64 bytes from 8.8.8.8: icmp_seq=37 ttl=118 time=30.4 ms
-64 bytes from 8.8.8.8: icmp_seq=38 ttl=118 time=4.99 ms
-64 bytes from 8.8.8.8: icmp_seq=39 ttl=118 time=4.71 ms
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=118 time=7.82 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=118 time=10.5 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=118 time=6.89 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=118 time=5.66 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=118 time=3.89 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=118 time=9.39 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=118 time=5.14 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=118 time=6.27 ms
+64 bytes from 8.8.8.8: icmp_seq=9 ttl=118 time=3.90 ms
+64 bytes from 8.8.8.8: icmp_seq=10 ttl=118 time=11.7 ms
+64 bytes from 8.8.8.8: icmp_seq=11 ttl=118 time=5.90 ms
+64 bytes from 8.8.8.8: icmp_seq=12 ttl=118 time=7.40 ms
+64 bytes from 8.8.8.8: icmp_seq=13 ttl=118 time=7.65 ms
+64 bytes from 8.8.8.8: icmp_seq=14 ttl=118 time=7.75 ms
+64 bytes from 8.8.8.8: icmp_seq=15 ttl=118 time=17.7 ms
+64 bytes from 8.8.8.8: icmp_seq=16 ttl=118 time=3.79 ms
+64 bytes from 8.8.8.8: icmp_seq=17 ttl=118 time=5.01 ms
+64 bytes from 8.8.8.8: icmp_seq=18 ttl=118 time=9.89 ms
+64 bytes from 8.8.8.8: icmp_seq=19 ttl=118 time=5.64 ms
+64 bytes from 8.8.8.8: icmp_seq=20 ttl=118 time=4.15 ms
 
 --- 8.8.8.8 ping statistics ---
-39 packets transmitted, 39 received, 0% packet loss, time 38055ms
-rtt min/avg/max/mdev = 3.829/7.406/30.485/5.011 ms
+20 packets transmitted, 20 received, 0% packet loss, time 19028ms
+rtt min/avg/max/mdev = 3.795/7.317/17.778/3.286 ms
 ```
 
 #### Self-Ping 
 
 ```
-PING 192.168.1.25 (192.168.1.25) 10000(10028) bytes of data.
-10008 bytes from 192.168.1.25: icmp_seq=1 ttl=64 time=0.149 ms
-10008 bytes from 192.168.1.25: icmp_seq=2 ttl=64 time=0.131 ms
-10008 bytes from 192.168.1.25: icmp_seq=3 ttl=64 time=0.117 ms
-10008 bytes from 192.168.1.25: icmp_seq=4 ttl=64 time=0.110 ms
-10008 bytes from 192.168.1.25: icmp_seq=5 ttl=64 time=0.117 ms
-10008 bytes from 192.168.1.25: icmp_seq=6 ttl=64 time=0.127 ms
-10008 bytes from 192.168.1.25: icmp_seq=7 ttl=64 time=0.117 ms
-10008 bytes from 192.168.1.25: icmp_seq=8 ttl=64 time=0.110 ms
-10008 bytes from 192.168.1.25: icmp_seq=9 ttl=64 time=0.110 ms
-10008 bytes from 192.168.1.25: icmp_seq=10 ttl=64 time=0.115 ms
-10008 bytes from 192.168.1.25: icmp_seq=11 ttl=64 time=0.114 ms
-10008 bytes from 192.168.1.25: icmp_seq=12 ttl=64 time=0.121 ms
-10008 bytes from 192.168.1.25: icmp_seq=13 ttl=64 time=0.117 ms
-10008 bytes from 192.168.1.25: icmp_seq=14 ttl=64 time=0.116 ms
-10008 bytes from 192.168.1.25: icmp_seq=15 ttl=64 time=0.118 ms
-10008 bytes from 192.168.1.25: icmp_seq=16 ttl=64 time=0.109 ms
-10008 bytes from 192.168.1.25: icmp_seq=17 ttl=64 time=0.112 ms
-10008 bytes from 192.168.1.25: icmp_seq=18 ttl=64 time=0.134 ms
-10008 bytes from 192.168.1.25: icmp_seq=19 ttl=64 time=0.116 ms
-10008 bytes from 192.168.1.25: icmp_seq=20 ttl=64 time=0.108 ms
+PING 192.168.1.26 (192.168.1.26) 10000(10028) bytes of data.
+10008 bytes from 192.168.1.26: icmp_seq=1 ttl=64 time=0.150 ms
+10008 bytes from 192.168.1.26: icmp_seq=2 ttl=64 time=0.124 ms
+10008 bytes from 192.168.1.26: icmp_seq=3 ttl=64 time=0.188 ms
+10008 bytes from 192.168.1.26: icmp_seq=4 ttl=64 time=0.117 ms
+10008 bytes from 192.168.1.26: icmp_seq=5 ttl=64 time=0.111 ms
+10008 bytes from 192.168.1.26: icmp_seq=6 ttl=64 time=0.112 ms
+10008 bytes from 192.168.1.26: icmp_seq=7 ttl=64 time=0.166 ms
+10008 bytes from 192.168.1.26: icmp_seq=8 ttl=64 time=0.117 ms
+10008 bytes from 192.168.1.26: icmp_seq=9 ttl=64 time=0.114 ms
+10008 bytes from 192.168.1.26: icmp_seq=10 ttl=64 time=0.116 ms
+10008 bytes from 192.168.1.26: icmp_seq=11 ttl=64 time=0.121 ms
+10008 bytes from 192.168.1.26: icmp_seq=12 ttl=64 time=0.125 ms
+10008 bytes from 192.168.1.26: icmp_seq=13 ttl=64 time=0.124 ms
+10008 bytes from 192.168.1.26: icmp_seq=14 ttl=64 time=0.117 ms
+10008 bytes from 192.168.1.26: icmp_seq=15 ttl=64 time=0.115 ms
+10008 bytes from 192.168.1.26: icmp_seq=16 ttl=64 time=0.125 ms
+10008 bytes from 192.168.1.26: icmp_seq=17 ttl=64 time=0.118 ms
+10008 bytes from 192.168.1.26: icmp_seq=18 ttl=64 time=0.136 ms
+10008 bytes from 192.168.1.26: icmp_seq=19 ttl=64 time=0.117 ms
+10008 bytes from 192.168.1.26: icmp_seq=20 ttl=64 time=0.114 ms
 
---- 192.168.1.25 ping statistics ---
-20 packets transmitted, 20 received, 0% packet loss, time 19731ms
-rtt min/avg/max/mdev = 0.108/0.118/0.149/0.013 ms
+--- 192.168.1.26 ping statistics ---
+20 packets transmitted, 20 received, 0% packet loss, time 19762ms
+rtt min/avg/max/mdev = 0.111/0.126/0.188/0.021 ms
 ```
 ### iw list
 
@@ -153,7 +152,7 @@ rtt min/avg/max/mdev = 0.108/0.118/0.149/0.013 ms
 <summary>iw list</summary>
 
 ```
-Wiphy phy1
+Wiphy phy0
         max # scan SSIDs: 4
         max scan IEs length: 2243 bytes
         max # sched scan SSIDs: 0
@@ -177,8 +176,8 @@ Wiphy phy1
                 * CMAC-256 (00-0f-ac:13)
                 * GMAC-128 (00-0f-ac:11)
                 * GMAC-256 (00-0f-ac:12)
-        Available Antennas: TX 0x3 RX 0x3
-        Configured Antennas: TX 0x3 RX 0x3
+        Available Antennas: TX 0x1 RX 0x1
+        Configured Antennas: TX 0x1 RX 0x1
         Supported interface modes:
                  * IBSS
                  * managed
@@ -197,9 +196,9 @@ Wiphy phy1
                         Max AMSDU length: 7935 bytes
                         DSSS/CCK HT40
                 Maximum RX AMPDU length 65535 bytes (exponent: 0x003)
-                Minimum RX AMPDU time spacing: 16 usec (0x07)
-                HT Max RX data rate: 300 Mbps
-                HT TX/RX MCS rate indexes supported: 0-15, 32
+                Minimum RX AMPDU time spacing: 2 usec (0x04)
+                HT Max RX data rate: 150 Mbps
+                HT TX/RX MCS rate indexes supported: 0-7, 32
                 Bitrates (non-HT):
                         * 1.0 Mbps
                         * 2.0 Mbps
@@ -238,37 +237,36 @@ Wiphy phy1
                         Max AMSDU length: 7935 bytes
                         DSSS/CCK HT40
                 Maximum RX AMPDU length 65535 bytes (exponent: 0x003)
-                Minimum RX AMPDU time spacing: 16 usec (0x07)
-                HT Max RX data rate: 300 Mbps
-                HT TX/RX MCS rate indexes supported: 0-15, 32
-                VHT Capabilities (0x03d071a2):
+                Minimum RX AMPDU time spacing: 2 usec (0x04)
+                HT Max RX data rate: 150 Mbps
+                HT TX/RX MCS rate indexes supported: 0-7, 32
+                VHT Capabilities (0x03d07122):
                         Max MPDU length: 11454
                         Supported Channel Width: neither 160 nor 80+80
                         short GI (80 MHz)
-                        TX STBC
                         SU Beamformee
                         MU Beamformee
                         +HTC-VHT
                 VHT RX MCS set:
                         1 streams: MCS 0-9
-                        2 streams: MCS 0-9
+                        2 streams: not supported
                         3 streams: not supported
                         4 streams: not supported
                         5 streams: not supported
                         6 streams: not supported
                         7 streams: not supported
                         8 streams: not supported
-                VHT RX highest supported: 780 Mbps
+                VHT RX highest supported: 390 Mbps
                 VHT TX MCS set:
                         1 streams: MCS 0-9
-                        2 streams: MCS 0-9
+                        2 streams: not supported
                         3 streams: not supported
                         4 streams: not supported
                         5 streams: not supported
                         6 streams: not supported
                         7 streams: not supported
                         8 streams: not supported
-                VHT TX highest supported: 780 Mbps
+                VHT TX highest supported: 390 Mbps
                 Bitrates (non-HT):
                         * 6.0 Mbps
                         * 9.0 Mbps
@@ -381,12 +379,12 @@ Wiphy phy1
 ```
 wlan0     IEEE 802.11  ESSID:"xellossfong"
           Mode:Managed  Frequency:2.412 GHz  Access Point: F8:6F:B0:0E:AE:E5
-          Bit Rate=135 Mb/s   Tx-Power=20 dBm
+          Bit Rate=40.5 Mb/s   Tx-Power=20 dBm
           Retry short limit:7   RTS thr:off   Fragment thr:off
           Power Management:off
-          Link Quality=56/70  Signal level=-54 dBm
+          Link Quality=50/70  Signal level=-60 dBm
           Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
-          Tx excessive retries:0  Invalid misc:14   Missed beacon:0
+          Tx excessive retries:0  Invalid misc:39   Missed beacon:0
 ```
 ### Server & Client Test via iperf3 (PC-Router-DUT)
 
@@ -398,82 +396,141 @@ wlan0     IEEE 802.11  ESSID:"xellossfong"
 -----------------------------------------------------------
 Server listening on 5201
 -----------------------------------------------------------
-Accepted connection from 192.168.1.3, port 55543
-[  5] local 192.168.1.25 port 5201 connected to 192.168.1.3 port 55544
+Accepted connection from 192.168.1.3, port 56659
+[  5] local 192.168.1.26 port 5201 connected to 192.168.1.3 port 56660
 [ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
-[  5]   0.00-1.00   sec  2.81 MBytes  23.6 Mbits/sec    0    135 KBytes
-[  5]   1.00-2.00   sec  2.02 MBytes  17.0 Mbits/sec    0    135 KBytes
-[  5]   2.00-3.00   sec  3.00 MBytes  25.2 Mbits/sec    0    135 KBytes
-[  5]   3.00-4.00   sec  3.37 MBytes  28.3 Mbits/sec    0    135 KBytes
-[  5]   4.00-5.00   sec  3.61 MBytes  30.3 Mbits/sec    0    135 KBytes
-[  5]   5.00-6.00   sec  3.61 MBytes  30.3 Mbits/sec    0    135 KBytes
-[  5]   6.00-7.00   sec  3.74 MBytes  31.3 Mbits/sec    0    135 KBytes
-[  5]   7.00-8.00   sec  3.49 MBytes  29.3 Mbits/sec    0    135 KBytes
-[  5]   8.00-9.00   sec  3.98 MBytes  33.4 Mbits/sec    0    135 KBytes
-[  5]   9.00-10.00  sec  4.53 MBytes  38.0 Mbits/sec    0    281 KBytes
-[  5]  10.00-11.00  sec  4.47 MBytes  37.4 Mbits/sec    0    281 KBytes
-[  5]  11.00-12.00  sec  4.66 MBytes  39.1 Mbits/sec    0    281 KBytes
-[  5]  12.00-13.00  sec  4.59 MBytes  38.5 Mbits/sec    0    281 KBytes
-[  5]  13.00-14.00  sec  4.29 MBytes  36.0 Mbits/sec    0    281 KBytes
-[  5]  14.00-15.00  sec  3.43 MBytes  28.8 Mbits/sec    0    281 KBytes
-[  5]  15.00-16.00  sec  3.06 MBytes  25.7 Mbits/sec    0    281 KBytes
-[  5]  16.00-17.00  sec  3.06 MBytes  25.7 Mbits/sec    0    281 KBytes
-[  5]  17.00-18.00  sec  3.19 MBytes  26.7 Mbits/sec    0    281 KBytes
-[  5]  18.00-19.00  sec  3.06 MBytes  25.7 Mbits/sec    0    281 KBytes
-[  5]  19.00-20.00  sec  4.23 MBytes  35.5 Mbits/sec    0    281 KBytes
-[  5]  20.00-21.00  sec  3.12 MBytes  26.2 Mbits/sec    0    281 KBytes
-[  5]  21.00-22.00  sec  3.49 MBytes  29.3 Mbits/sec    0    281 KBytes
-[  5]  22.00-23.00  sec  3.43 MBytes  28.8 Mbits/sec    0    281 KBytes
-[  5]  23.00-24.00  sec  3.37 MBytes  28.3 Mbits/sec    0    281 KBytes
-[  5]  24.00-25.00  sec  3.55 MBytes  29.8 Mbits/sec    0    281 KBytes
-[  5]  25.00-26.00  sec  3.80 MBytes  31.9 Mbits/sec    0    281 KBytes
-[  5]  26.00-27.00  sec  3.74 MBytes  31.3 Mbits/sec    0    281 KBytes
-[  5]  27.00-28.00  sec  3.43 MBytes  28.8 Mbits/sec    0    281 KBytes
-[  5]  28.00-29.00  sec  3.74 MBytes  31.3 Mbits/sec    0    281 KBytes
-[  5]  29.00-30.00  sec  3.55 MBytes  29.8 Mbits/sec    0    281 KBytes
-[  5]  30.00-31.00  sec  3.80 MBytes  31.9 Mbits/sec    0    281 KBytes
-[  5]  31.00-32.00  sec  3.43 MBytes  28.8 Mbits/sec    0    281 KBytes
-[  5]  32.00-33.00  sec  3.43 MBytes  28.8 Mbits/sec    0    281 KBytes
-[  5]  33.00-34.00  sec  3.74 MBytes  31.4 Mbits/sec    0    281 KBytes
-[  5]  34.00-35.00  sec  3.68 MBytes  30.8 Mbits/sec    0    281 KBytes
-[  5]  35.00-36.00  sec  3.68 MBytes  30.8 Mbits/sec    0    281 KBytes
-[  5]  36.00-37.00  sec  3.37 MBytes  28.3 Mbits/sec    0    281 KBytes
-[  5]  37.00-38.00  sec  3.74 MBytes  31.3 Mbits/sec    0    281 KBytes
-[  5]  38.00-39.00  sec  3.37 MBytes  28.3 Mbits/sec    0    281 KBytes
-[  5]  39.00-40.00  sec  3.74 MBytes  31.3 Mbits/sec    0    281 KBytes
-[  5]  40.00-41.00  sec  3.61 MBytes  30.3 Mbits/sec    0    281 KBytes
-[  5]  41.00-42.00  sec  3.68 MBytes  30.8 Mbits/sec    0    281 KBytes
-[  5]  42.00-43.00  sec  4.04 MBytes  33.9 Mbits/sec    0    281 KBytes
-[  5]  43.00-44.00  sec  4.29 MBytes  36.0 Mbits/sec    0    281 KBytes
-[  5]  44.00-45.00  sec  3.98 MBytes  33.4 Mbits/sec    0    281 KBytes
-[  5]  45.00-46.00  sec  3.74 MBytes  31.3 Mbits/sec    0    281 KBytes
-[  5]  46.00-47.00  sec  4.10 MBytes  34.4 Mbits/sec    0    281 KBytes
-[  5]  47.00-48.00  sec  4.04 MBytes  33.9 Mbits/sec    0    281 KBytes
-[  5]  48.00-49.00  sec  4.04 MBytes  33.9 Mbits/sec    0    281 KBytes
-[  5]  49.00-50.00  sec  3.74 MBytes  31.3 Mbits/sec    0    281 KBytes
-[  5]  50.00-51.00  sec  3.74 MBytes  31.4 Mbits/sec    0    281 KBytes
-[  5]  51.00-52.00  sec  4.04 MBytes  33.9 Mbits/sec    0    281 KBytes
-[  5]  52.00-53.00  sec  4.04 MBytes  33.9 Mbits/sec    0    281 KBytes
-[  5]  53.00-54.00  sec  3.74 MBytes  31.3 Mbits/sec    0    281 KBytes
-[  5]  54.00-55.00  sec  3.49 MBytes  29.3 Mbits/sec    0    281 KBytes
-[  5]  55.00-56.00  sec  3.74 MBytes  31.3 Mbits/sec    0    281 KBytes
-[  5]  56.00-57.00  sec  3.80 MBytes  31.9 Mbits/sec    0    281 KBytes
-[  5]  57.00-58.00  sec  3.98 MBytes  33.4 Mbits/sec    0    281 KBytes
-[  5]  58.00-59.00  sec  3.80 MBytes  31.9 Mbits/sec    0    281 KBytes
-[  5]  59.00-60.00  sec  3.98 MBytes  33.4 Mbits/sec    0    281 KBytes
-[  5]  60.00-61.00  sec  3.98 MBytes  33.4 Mbits/sec    0    281 KBytes
-[  5]  61.00-62.00  sec  3.80 MBytes  31.8 Mbits/sec    0    281 KBytes
-[  5]  62.00-63.00  sec  3.37 MBytes  28.3 Mbits/sec    0    281 KBytes
-[  5]  63.00-64.00  sec  4.17 MBytes  34.9 Mbits/sec    0    364 KBytes
-[  5]  64.00-65.00  sec  3.92 MBytes  32.9 Mbits/sec    0    364 KBytes
-[  5]  65.00-66.00  sec  3.80 MBytes  31.9 Mbits/sec    0    364 KBytes
-[  5]  66.00-67.00  sec  3.80 MBytes  31.9 Mbits/sec    0    364 KBytes
-[  5]  67.00-68.00  sec  3.61 MBytes  30.3 Mbits/sec    0    364 KBytes
-[  5]  67.00-68.00  sec  3.61 MBytes  30.3 Mbits/sec    0    364 KBytes
+[  5]   0.00-1.00   sec   624 KBytes  5.11 Mbits/sec    1   44.2 KBytes
+[  5]   1.00-2.00   sec   753 KBytes  6.17 Mbits/sec    0   84.1 KBytes
+[  5]   2.00-3.00   sec   627 KBytes  5.14 Mbits/sec    0   94.1 KBytes
+[  5]   3.00-4.00   sec   627 KBytes  5.14 Mbits/sec    0   98.4 KBytes
+[  5]   4.00-5.00   sec   690 KBytes  5.65 Mbits/sec    0   98.4 KBytes
+[  5]   5.00-6.00   sec   753 KBytes  6.17 Mbits/sec    0   98.4 KBytes
+[  5]   6.00-7.00   sec   753 KBytes  6.17 Mbits/sec    0    103 KBytes
+[  5]   7.00-8.00   sec   816 KBytes  6.68 Mbits/sec    0    115 KBytes
+[  5]   8.00-9.00   sec  1.04 MBytes  8.74 Mbits/sec    0    130 KBytes
+[  5]   9.00-10.00  sec   753 KBytes  6.17 Mbits/sec    0    130 KBytes
+[  5]  10.00-11.00  sec   941 KBytes  7.71 Mbits/sec    0    130 KBytes
+[  5]  11.00-12.00  sec  1.29 MBytes  10.8 Mbits/sec    0    130 KBytes
+[  5]  12.00-13.00  sec   941 KBytes  7.71 Mbits/sec    0    130 KBytes
+[  5]  13.00-14.00  sec   941 KBytes  7.71 Mbits/sec    0    130 KBytes
+[  5]  14.00-15.00  sec   941 KBytes  7.71 Mbits/sec    0    130 KBytes
+[  5]  15.00-16.00  sec  1.10 MBytes  9.25 Mbits/sec    0    130 KBytes
+[  5]  16.00-17.00  sec   753 KBytes  6.17 Mbits/sec    0    130 KBytes
+[  5]  17.00-18.00  sec   941 KBytes  7.71 Mbits/sec    0    130 KBytes
+[  5]  18.00-19.00  sec  1.10 MBytes  9.25 Mbits/sec    0    198 KBytes
+[  5]  19.00-20.00  sec  1.23 MBytes  10.3 Mbits/sec    0    198 KBytes
+[  5]  20.00-21.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  21.00-22.00  sec   565 KBytes  4.63 Mbits/sec    0    198 KBytes
+[  5]  22.00-23.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  23.00-24.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  24.00-25.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  25.00-26.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  26.00-27.00  sec   251 KBytes  2.05 Mbits/sec    0    198 KBytes
+[  5]  27.00-28.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  28.00-29.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  29.00-30.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  30.00-31.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  31.00-32.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  32.00-33.00  sec   376 KBytes  3.08 Mbits/sec    0    198 KBytes
+[  5]  33.00-34.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  34.00-35.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  35.00-36.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  36.00-37.00  sec   251 KBytes  2.06 Mbits/sec    0    198 KBytes
+[  5]  37.00-38.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  38.00-39.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  39.00-40.00  sec   565 KBytes  4.62 Mbits/sec    0    198 KBytes
+[  5]  40.00-41.00  sec  1004 KBytes  8.23 Mbits/sec    0    198 KBytes
+[  5]  41.00-42.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  42.00-43.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  43.00-44.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  44.00-45.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  45.00-46.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  46.00-47.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  47.00-48.00  sec   816 KBytes  6.68 Mbits/sec    0    198 KBytes
+[  5]  48.00-49.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  49.00-50.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  50.00-51.00  sec  1004 KBytes  8.23 Mbits/sec    0    198 KBytes
+[  5]  51.00-52.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  52.00-53.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  53.00-54.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  54.00-55.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  55.00-56.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  56.00-57.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  57.00-58.00  sec   627 KBytes  5.14 Mbits/sec    0    198 KBytes
+[  5]  58.00-59.00  sec  1004 KBytes  8.23 Mbits/sec    0    198 KBytes
+[  5]  59.00-60.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  60.00-61.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  61.00-62.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  62.00-63.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  63.00-64.00  sec  1004 KBytes  8.23 Mbits/sec    0    198 KBytes
+[  5]  64.00-65.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  65.00-66.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  66.00-67.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  67.00-68.00  sec   816 KBytes  6.68 Mbits/sec    0    198 KBytes
+[  5]  68.00-69.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  69.00-70.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  70.00-71.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  71.00-72.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  72.00-73.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  73.00-74.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  74.00-75.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  75.00-76.00  sec  1.23 MBytes  10.3 Mbits/sec    0    198 KBytes
+[  5]  76.00-77.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  77.00-78.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  78.00-79.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  79.00-80.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  80.00-81.00  sec  1.04 MBytes  8.74 Mbits/sec    0    198 KBytes
+[  5]  81.00-82.00  sec   816 KBytes  6.68 Mbits/sec    0    198 KBytes
+[  5]  82.00-83.00  sec  1.04 MBytes  8.74 Mbits/sec    0    198 KBytes
+[  5]  83.00-84.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  84.00-85.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  85.00-86.00  sec   816 KBytes  6.68 Mbits/sec    0    198 KBytes
+[  5]  86.00-87.00  sec  1.04 MBytes  8.74 Mbits/sec    0    198 KBytes
+[  5]  87.00-88.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  88.00-89.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  89.00-90.00  sec  1.10 MBytes  9.25 Mbits/sec    0    198 KBytes
+[  5]  90.00-91.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  91.00-92.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  92.00-93.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  93.00-94.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  94.00-95.00  sec   816 KBytes  6.68 Mbits/sec    0    198 KBytes
+[  5]  95.00-96.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  96.00-97.00  sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5]  97.00-98.00  sec   753 KBytes  6.17 Mbits/sec    0    198 KBytes
+[  5]  98.00-99.00  sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5]  99.00-100.00 sec  1004 KBytes  8.22 Mbits/sec    0    198 KBytes
+[  5] 100.00-101.00 sec   502 KBytes  4.11 Mbits/sec    0    198 KBytes
+[  5] 101.00-102.00 sec   251 KBytes  2.06 Mbits/sec    0    198 KBytes
+[  5] 102.00-103.00 sec  0.00 Bytes  0.00 bits/sec    1    138 KBytes
+[  5] 103.00-104.00 sec  1.10 MBytes  9.26 Mbits/sec    1    104 KBytes
+[  5] 104.00-105.00 sec   753 KBytes  6.17 Mbits/sec    0    114 KBytes
+[  5] 105.00-106.00 sec  1004 KBytes  8.22 Mbits/sec    0    117 KBytes
+[  5] 106.00-107.00 sec   251 KBytes  2.06 Mbits/sec    0    117 KBytes
+[  5] 107.00-108.00 sec   753 KBytes  6.17 Mbits/sec    0    118 KBytes
+[  5] 108.00-109.00 sec   502 KBytes  4.11 Mbits/sec    1   91.2 KBytes
+[  5] 109.00-110.00 sec  1004 KBytes  8.22 Mbits/sec    0    107 KBytes
+[  5] 110.00-111.00 sec   753 KBytes  6.17 Mbits/sec    0    115 KBytes
+[  5] 111.00-112.00 sec   251 KBytes  2.06 Mbits/sec    0    115 KBytes
+[  5] 112.00-113.00 sec   502 KBytes  4.11 Mbits/sec   15   91.2 KBytes
+[  5] 113.00-114.00 sec   502 KBytes  4.11 Mbits/sec    2   78.4 KBytes
+[  5] 114.00-115.00 sec   251 KBytes  2.05 Mbits/sec    0   82.7 KBytes
+[  5] 115.00-116.00 sec   753 KBytes  6.17 Mbits/sec    0   84.1 KBytes
+[  5] 116.00-117.00 sec   502 KBytes  4.11 Mbits/sec    0   84.1 KBytes
+[  5] 117.00-118.00 sec   502 KBytes  4.11 Mbits/sec    0   87.0 KBytes
+[  5] 118.00-119.00 sec   753 KBytes  6.17 Mbits/sec    0   94.1 KBytes
+[  5] 119.00-120.00 sec   753 KBytes  6.17 Mbits/sec    0    106 KBytes
+[  5] 120.00-121.00 sec  1004 KBytes  8.22 Mbits/sec    0    130 KBytes
+[  5] 121.00-122.00 sec   502 KBytes  4.11 Mbits/sec    0    141 KBytes
+[  5] 122.00-123.00 sec  1004 KBytes  8.22 Mbits/sec    0    141 KBytes
+[  5] 123.00-124.00 sec  1004 KBytes  8.22 Mbits/sec    0    141 KBytes
+[  5] 124.00-125.00 sec   816 KBytes  6.68 Mbits/sec    0    141 KBytes
+[  5] 125.00-126.00 sec   753 KBytes  6.17 Mbits/sec    0    141 KBytes
+[  5] 126.00-127.00 sec  1004 KBytes  8.22 Mbits/sec    0    141 KBytes
+[  5] 126.00-127.00 sec  1004 KBytes  8.22 Mbits/sec    0    141 KBytes
 - - - - - - - - - - - - - - - - - - - - - - - - -
 [ ID] Interval           Transfer     Bandwidth       Retr
-[  5]   0.00-68.00  sec   254 MBytes  31.4 Mbits/sec    0             sender
-[  5]   0.00-68.00  sec  0.00 Bytes  0.00 bits/sec                  receiver
+[  5]   0.00-127.00 sec  96.2 MBytes  6.36 Mbits/sec   21             sender
+[  5]   0.00-127.00 sec  0.00 Bytes  0.00 bits/sec                  receiver
 ```
 
 </details>
