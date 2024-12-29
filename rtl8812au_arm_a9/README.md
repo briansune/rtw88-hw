@@ -7,6 +7,17 @@
 |<img src="https://github.com/user-attachments/assets/026f090c-0aed-49ba-aeae-38b968fcf642" height="400"/>|<img src="https://github.com/user-attachments/assets/bd7b8813-3b1b-4868-8ca3-ae987c9269e9" height="400"/>|
 
 ```
+uname -r
+5.4.0
+
+lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 18.04.5 LTS
+Release:        18.04
+Codename:       bionic
+
+lscpu
 Architecture:        armv7l
 Byte Order:          Little Endian
 CPU(s):              2
@@ -22,18 +33,115 @@ BogoMIPS:            666.66
 Flags:               half thumb fastmult vfp edsp neon vfpv3 tls vfpd32
 ```
 
+### USB Tree
+
+```
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ci_hdrc/1p, 480M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/2p, 480M
+        |__ Port 1: Dev 4, If 0, Class=Vendor Specific Class, Driver=rtw_8812au, 480M
+```
+
+<details>
+
+<summary>USB Details</summary>
+
+```
+Bus 001 Device 004: ID 0bda:8812 Realtek Semiconductor Corp. RTL8812AU 802.11a/b/g/n/ac WLAN Adapter
+Couldn't open device, some information will be missing
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.10
+  bDeviceClass            0 (Defined at Interface level)
+  bDeviceSubClass         0
+  bDeviceProtocol         0
+  bMaxPacketSize0        64
+  idVendor           0x0bda Realtek Semiconductor Corp.
+  idProduct          0x8812 RTL8812AU 802.11a/b/g/n/ac WLAN Adapter
+  bcdDevice            0.00
+  iManufacturer           1
+  iProduct                2
+  iSerial                 3
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength           53
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              500mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           5
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass    255 Vendor Specific Subclass
+      bInterfaceProtocol    255 Vendor Specific Protocol
+      iInterface              0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x03  EP 3 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x04  EP 4 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0200  1x 512 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x85  EP 5 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               1
+```
+
+</details>
+
 ### Driver Load
 
 The driver is loaded via "insmod"
 
 ```
-Module                  Size  Used by
-rtw_8812au             16384  0
-rtw_8812a              45056  1 rtw_8812au
-rtw_88xxa              32768  1 rtw_8812a
-rtw_usb                24576  1 rtw_8812au
-rtw_core              172032  3 rtw_8812a,rtw_usb,rtw_88xxa
-
 [   89.562175] rtw_core: loading out-of-tree module taints kernel.
 [  101.202227] rtw_8812au 1-1.1:1.0: Firmware version 52.14.0, H2C version 0
 [  102.257255] usbcore: registered new interface driver rtw_8812au
@@ -41,7 +149,14 @@ rtw_core              172032  3 rtw_8812a,rtw_usb,rtw_88xxa
 [  102.814220] usb 1-1.1: new high-speed USB device number 4 using ci_hdrc
 [  102.968420] rtw_8812au 1-1.1:1.0: Firmware version 52.14.0, H2C version 0
 
+Module                  Size  Used by
+rtw_8812au             16384  0
+rtw_8812a              45056  1 rtw_8812au
+rtw_88xxa              32768  1 rtw_8812a
+rtw_usb                24576  1 rtw_8812au
+rtw_core              172032  3 rtw_8812a,rtw_usb,rtw_88xxa
 ```
+
 ### Network Manager
 
 ```
