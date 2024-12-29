@@ -20,7 +20,7 @@
 |USB|RTL8814 [A] U|PCBA||<img src="https://github.com/user-attachments/assets/caaf1a45-e727-49c7-9f23-68beabce392b" width="200"/>|⏳|
 |||||||
 |USB|RTL8821 [A] U||||⛔|
-|USB|RTL8821 [C] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="https://github.com/user-attachments/assets/20a5b758-1305-4ba6-944b-3f32485f26a9" width="200"/><p><img src="https://github.com/user-attachments/assets/3b42204e-2e0c-46d8-ae13-adcf35eb7017" width="200"/>|<p>[ARM - A9 🟢](./rtl8821cu_arm_a9)<p>ARM64 - A35 🟢<p>[ARM64 - A53 🟢](./rtl8821cu_arm_a53)<p>STA 🟢<p>AP 🟡|
+|USB|RTL8821 [C] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="https://github.com/user-attachments/assets/20a5b758-1305-4ba6-944b-3f32485f26a9" width="200"/><p><img src="https://github.com/user-attachments/assets/3b42204e-2e0c-46d8-ae13-adcf35eb7017" width="200"/>|<p>[ARM - A9 🟡](./rtl8821cu_arm_a9)<p>ARM64 - A35 ⏳<p>[ARM64 - A53 🟢](./rtl8821cu_arm_a53)<p>STA 🟢<p>AP 🟡|
 |||||||
 |USB|RTL8822 [B] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8822b.ko<p>rtw_8822bu.ko|<img src="https://github.com/user-attachments/assets/06b10ca5-1407-4069-b684-19f6bb726662" width="200"/>|<p>ARM - A9 ⏳<p>ARM64 - A35 🟡<p>[ARM64 - A53 🟡](./rtl8822bu_arm_a53)<p>STA 🟢<p>AP 🟡||
 |USB|RTL8822 [C] U||||⛔|
