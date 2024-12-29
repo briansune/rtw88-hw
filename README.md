@@ -13,7 +13,7 @@
 |<p>USB 2.0|RTL8811 [B] U|Module||<img src="https://github.com/user-attachments/assets/dfcff7d3-a2e6-4548-8e06-31029389fd31" width="200"/>|⏳|
 |<p>USB 2.0|RTL8811 [C] U||||⛔|
 |||||||
-|<p>USB 2.0<p>USB 3.0 (HW Mod.)|RTL8812 [A] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_88xxa.ko<p>rtw_8812a.ko<p>rtw_8812au.ko|<img src="https://github.com/user-attachments/assets/f4c05105-5f9e-4de4-b3b5-8a3cbd5bb22f" width="200"/>|<p>[ARM - A9 🟢](./rtl8812au_arm_a9)<p>ARM64 - A35 🟡<p>[ARM64 - A53 🟢](./rtl8812au_arm_a53)<p>STA 🟢<p>AP 🟡|
+|<p>USB 2.0<p>USB 3.0 (HW Mod.)|RTL8812 [A] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_88xxa.ko<p>rtw_8812a.ko<p>rtw_8812au.ko|<img src="https://github.com/user-attachments/assets/f4c05105-5f9e-4de4-b3b5-8a3cbd5bb22f" width="200"/>|<p>[ARM - A9 🟢](./rtl8812au_arm_a9)<p>ARM64 - A35 🟡<p>[ARM64 - A53 🟢](./rtl8812au_arm_a53)<p>[ARM64 - A53 USB 3.0 🟢](./rtl8812au_arm_a53_usb3)<p>STA 🟢<p>AP 🟡|
 |<p>USB 2.0|RTL8812 [B] U||||⛔|
 |<p>USB 2.0|RTL8812 [C] U||||⛔|
 |||||||
