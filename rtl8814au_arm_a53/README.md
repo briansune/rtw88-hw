@@ -4,7 +4,7 @@
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="" height="400"/>|<img src="" height="400"/>|
+|<img src="https://github.com/user-attachments/assets/3575afa8-00f3-460a-bd91-e5023455df48" height="400"/>|<img src="https://github.com/user-attachments/assets/8d710420-389d-4076-bd45-751acf7db476" height="400"/>|
 
 ```
 Architecture:        aarch64
