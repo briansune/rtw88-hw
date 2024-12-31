@@ -4,7 +4,7 @@
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="" height="400"/>|<img src="https://github.com/user-attachments/assets/e33d820c-4b2a-42e0-8a23-474676784b78" height="400"/>|
+|<img src="https://github.com/user-attachments/assets/6b0e7499-aaa1-461e-b9cc-a19852c82370" height="400"/>|<img src="https://github.com/user-attachments/assets/e33d820c-4b2a-42e0-8a23-474676784b78" height="400"/>|
 
 ```
 uname -r
