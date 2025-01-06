@@ -13,6 +13,7 @@
 |<p>USB 2.0|RTL8811 [C] U|Module||<img src="https://github.com/user-attachments/assets/57dc7d6e-8fc9-4008-b1a5-83038d3afb6a" width="200"/>|<p>[ARM - A9 🟡](./rtl8811cu_arm_a9)<p>ARM64 - A35 ✖<p>ARM64 - A53 ✖<p>STA 🔴<p>AP 🟢|
 |||||||
 |<p>USB 2.0 (Only 2.4G)<p>USB 3.0 (HW Mod. 2.4G Only)|RTL8812 [A] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_88xxa.ko<p>rtw_8812a.ko<p>rtw_8812au.ko|<img src="https://github.com/user-attachments/assets/f4c05105-5f9e-4de4-b3b5-8a3cbd5bb22f" width="200"/>|<p>[ARM - A9 🟢](./rtl8812au_arm_a9)<p>[ARM64 - A35 🟡](./rtl8812au_arm_a35)<p>[ARM64 - A53 🟢](./rtl8812au_arm_a53)<p>[ARM64 - A53 USB 3.0 🟢](./rtl8812au_arm_a53_usb3)<p>STA 🟢<p>AP 🟡|
+|<p>USB 3.0|RTL8812 [A] U|USB PCBA|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_88xxa.ko<p>rtw_8812a.ko<p>rtw_8812au.ko|<img src="https://github.com/user-attachments/assets/b1ec9a82-48ca-4745-8aee-fc0e5e6b7c4a" width="200"/>|<p>[ARM64 - A53 USB 3.0 🟢](./rtl8812au_arm_a53_usb3_5g)<p>STA 🟢<p>AP 🟡|
 |<p>USB 2.0|RTL8812 [B] U||||✖|
 |<p>USB 2.0|RTL8812 [C] U||||✖|
 |||||||
