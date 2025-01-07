@@ -2,9 +2,9 @@
 
 ### Test Gear
 
-|Test Board|USB Dongle HW|
+|Test Board|PCBA HW|
 |-|-|
-|||
+|<img src="https://github.com/user-attachments/assets/effaeef6-d7d0-4c93-9d82-6fbaa2abab01" height="400"/>|<img src="https://github.com/user-attachments/assets/06477805-a165-4a56-bba1-d6e9fda5ccd4" height="400"/>|
 
 ```
 uname -r
