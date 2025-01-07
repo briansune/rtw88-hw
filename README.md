@@ -21,7 +21,7 @@
 |||||||
 |<p>USB 2.0|RTL8821 [A] U||||✖|
 |<p>USB 2.0|RTL8821 [C] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="https://github.com/user-attachments/assets/20a5b758-1305-4ba6-944b-3f32485f26a9" width="200"/>|<p>[ARM - A9 🟡](./rtl8821cu_arm_a9)<p>ARM64 - A35 ⏳<p>[ARM64 - A53 🟢](./rtl8821cu_arm_a53)<p>STA 🟢<p>AP 🟡|
-|<p>USB 2.0|RTL8821 [C] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="https://github.com/user-attachments/assets/3b42204e-2e0c-46d8-ae13-adcf35eb7017" width="200"/>|<p>[ARM - A9 🟡](./rtl8821cu_arm_a9)<p>STA 🟡<p>AP ⏳|
+|<p>USB 2.0|RTL8821 [C] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="https://github.com/user-attachments/assets/3b42204e-2e0c-46d8-ae13-adcf35eb7017" width="200"/>|<p>[ARM - A9 🟡](./rtl8821cu_arm_a9_pcba)<p>STA 🟡<p>AP ⏳|
 |||||||
 |<p>USB 2.0<p>USB 3.0|RTL8822 [B] U|Dongle|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8822b.ko<p>rtw_8822bu.ko|<img src="https://github.com/user-attachments/assets/06b10ca5-1407-4069-b684-19f6bb726662" width="200"/>|<p>[ARM - A9 🟢](./rtl8822bu_arm_a9)<p>ARM64 - A35 🟡<p>[ARM64 - A53 🟡](./rtl8822bu_arm_a53)<p>STA 🟢<p>AP 🟡||
 |<p>USB 2.0|RTL8822 [C] U||||✖|
