@@ -4,7 +4,7 @@
 
 |Test Board|SDIO EVM HW|
 |-|-|
-|<img src="" height="400"/>|<img src="" height="400"/>|
+|<img src="https://github.com/user-attachments/assets/73777836-d765-4618-8e4c-d843b326c991" height="400"/>|<img src="https://github.com/user-attachments/assets/ae6d6884-5310-426d-9a8c-f442d8d3f1b8" height="400"/>|
 
 ```
 uname -r
@@ -51,6 +51,12 @@ Flags:                                fp asimd evtstrm aes pmull sha1 sha2 crc32
 ### SDIO Tree
 
 Due to hardware limitation on the test gear SDIO only uses 3.3V.
+
+So limited speed to <50MHz High-Speed Specification.
+
+Reduce clock speed to 25MHz, which futher enhance bus stability as well.
+
+Vendor driver had been tested and no issues are found compared with RTW88!
 
 ```
 dmesg | grep mmc
