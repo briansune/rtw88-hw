@@ -28,7 +28,7 @@
 |||||||
 |SDIO|RTL8723 [D] S<p>Custom HW|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="https://github.com/user-attachments/assets/13eda78d-f579-4ec6-9320-2d4821633a1b" width="200"/>|<p>ARM - A9 🟢<p>ARM64 - A35 🟡<p>ARM64 - A53 ⏳<p>STA ⏳<p>AP ⏳|
 |||||||
-|SDIO|RTL8821 [C] S<p>Module|||<img src="https://github.com/user-attachments/assets/23521524-ab58-40be-9028-dd850306dc1b" width="200"/>|⏳|
+|SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="https://github.com/user-attachments/assets/23521524-ab58-40be-9028-dd850306dc1b" width="200"/>|<p>[ARM - A35 🔴](./rtl8821cs_arm_a35)<p>STA 🔴<p>AP 🔴|
 |||||||
 |SDIO|RTL8822 [B] S<p>Module|||<img src="https://github.com/user-attachments/assets/a93f93ed-912f-4993-a39c-5b3bdd804f6e" width="200"/>|⏳|
 |SDIO|RTL8822 [C] S<p>Module|||<img src="https://github.com/user-attachments/assets/105c7116-77f7-4693-a3a6-09583535debd" width="200"/>|⏳|
