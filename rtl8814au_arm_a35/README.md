@@ -4,7 +4,7 @@
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="https://github.com/user-attachments/assets/d8e51f22-db3b-4777-a624-9a027870f669" height="400"/>|<img src="https://github.com/user-attachments/assets/8d710420-389d-4076-bd45-751acf7db476" height="400"/>|
+|<img src="./image/8814au/rtl8814au_arm_a35.JPG" height="400"/>|<img src="./image/8814au/rtl8814au_pcba.png" height="400"/>|
 
 ```
 6.1.111-rt42

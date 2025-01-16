@@ -4,7 +4,7 @@
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="https://github.com/user-attachments/assets/c12ba077-8607-4d30-9a82-540f9692712e" height="400"/>|<img src="https://github.com/user-attachments/assets/98e43c49-fd6d-4d87-bd60-61dbdfaf872b" height="400"/>|
+|<img src="./image/8822bu/rtl8822bu_arm_a53.png" height="400"/>|<img src="./image/8822bu/rtl8822bu_usb_pcba.JPG" height="400"/>|
 
 ```
 Architecture:        aarch64

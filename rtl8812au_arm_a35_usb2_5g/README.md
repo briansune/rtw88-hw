@@ -4,7 +4,7 @@
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="https://github.com/user-attachments/assets/8cf97d5b-a307-4d4e-8770-58cee0fd1843" height="400"/>|<img src="https://github.com/user-attachments/assets/7473222c-3969-4c74-9c19-629dbdb79321" height="400"/>|
+|<img src="./images/8812au/rtl8812au_arm_a35_5g.JPG" height="400"/>|<img src="./images/8812au/rtl8812au_usb_5g.png" height="400"/>|
 
 ```
 uname -r
