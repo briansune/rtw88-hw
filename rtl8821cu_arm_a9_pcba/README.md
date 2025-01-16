@@ -4,7 +4,7 @@
 
 |Test Board|PCBA HW|
 |-|-|
-|<img src="./image/8821cu/rtl8821cu_arm_a9_pcba.png" height="400"/>|<img src="./image/8821cu/rtl8821cu_pcba.png" height="400"/>|
+|<img src="../images/8821cu/rtl8821cu_arm_a9_pcba.png" height="400"/>|<img src="../images/8821cu/rtl8821cu_pcba.png" height="400"/>|
 
 ```
 uname -r

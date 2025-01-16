@@ -4,7 +4,7 @@
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="./image/8723du/rtl8723du_arm_a35.png" height="400"/>|<img src="./image/8723du/rtl8723du_usb_pcba.png" height="400"/>|
+|<img src="../images/8723du/rtl8723du_arm_a35.png" height="400"/>|<img src="../images/8723du/rtl8723du_usb_pcba.png" height="400"/>|
 
 ```
 6.1.111-rt42

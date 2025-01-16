@@ -4,7 +4,7 @@
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="./image/8814au/rtl8814au_arm_a53.png" height="400"/>|<img src="./image/8814au/rtl8814au_pcba.png" height="400"/>|
+|<img src="../images/8814au/rtl8814au_arm_a53.png" height="400"/>|<img src="../images/8814au/rtl8814au_pcba.png" height="400"/>|
 
 ```
 Architecture:        aarch64

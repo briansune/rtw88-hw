@@ -4,7 +4,7 @@
 
 |Test Board|SDIO EVM HW|
 |-|-|
-|<img src="./image/8821cs/rtl8821cs_arm_a35.png" height="400"/>|<img src="./image/8821cs/rtl8821cs_module.png" height="400"/>|
+|<img src="../images/8821cs/rtl8821cs_arm_a35.png" height="400"/>|<img src="../images/8821cs/rtl8821cs_module.png" height="400"/>|
 
 ```
 uname -r
