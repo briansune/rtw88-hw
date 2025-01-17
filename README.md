@@ -1,9 +1,38 @@
 # RTW88 Hardware Testing
 
-## This repository is aim to provide RTW88 Community Driver Hardware Support Status
+### This repository is aim to provide RTW88 Community Driver Hardware Support Status
 
-## Latest RTW88 Driver Support List
+## Known Issue
 
+2.4G WIFI band could be disturbed by nearby Bluetooth Devices and possible ZigBee Devices as well!
+
+https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
+
+## SDIO Devices Investigation on RTW88
+
+According to A35 DUT tested result.
+
+DTS/DTSI device tree SDIO profile could introduce unstable issue on RTW88 or possible crashes.
+
+All SDIO should first detected from low clock speed then enter high speed frequency ranges.
+
+Most SDIO explain could be found [here](https://www.prodigytechno.com/sdio-protocol).
+
+The current finding are as follows:
+
+If Low-Speed profile (4bits) is deployed, and RTW88 is used.
+
+|Testbench|Device|Speed Profile|Issue|Vendor Driver|
+|:---:|:---:|:---:|:---:|:---:|
+|A35 ARM|RTL8723DS|Low-Speed|🟢|🟢|
+|A35 ARM|RTL87821CS|Low-Speed|🔴 Crash on WIFI connection "Unable to Use"|🟢|
+|A35 ARM|RTL87822CS|Low-Speed|🔴 Crash Message but no System Hang|🟢|
+||||||
+|A35 ARM|RTL8723DS|High-Speed|🟢|🟢|
+|A35 ARM|RTL87821CS|High-Speed|⏳|🟢|
+|A35 ARM|RTL87822CS|High-Speed|🔴 Possible Network Drop |🟢|
+
+## Fully RTW88 Driver Support Devices Test Report Table
 
 |Phy Interface|<p>Chip #<p>HW Type|DUT Kernel #|Driver Tree|HW Image|Status|
 |:---:|:---|:---|:---:|:---:|---:|
