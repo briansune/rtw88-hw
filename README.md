@@ -20,7 +20,7 @@ Most SDIO explain could be found [here](https://www.prodigytechno.com/sdio-proto
 
 The current finding are as follows:
 
-If Low-Speed profile (4bits) is deployed, and RTW88 is used.
+-> Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 
 |Testbench|Device|Speed Profile|Issue|Vendor Driver|
 |:---:|:---:|:---:|:---:|:---:|
