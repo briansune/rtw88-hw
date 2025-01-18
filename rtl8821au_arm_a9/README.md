@@ -4,7 +4,7 @@
 
 |Test Board|USB Dongle HW|
 |-|-|
-|<img src="../images/rtl8821au_arm_a9.JPG" height="400"/>|<img src="../images/rtl8821au_usb_pcba.JPG" height="400"/>|
+|<img src="../images/8821au/rtl8821au_arm_a9.JPG" height="400"/>|<img src="../images/8821au/rtl8821au_usb_pcba.JPG" height="400"/>|
 
 ```
 5.4.0-xilinx
