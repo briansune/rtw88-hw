@@ -67,7 +67,7 @@ The current finding are as follows:
 |||||||
 |SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM - A35 🔴](./rtl8821cs_arm_a35)<p>STA 🔴<p>AP 🔴|
 |||||||
-|SDIO|RTL8822 [B] S<p>Module|||<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|⏳|
-|SDIO|RTL8822 [C] S<p>Module|||<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|⏳|
+|SDIO|RTL8822 [B] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|⏳|
+|SDIO|RTL8822 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822c.ko<p>rtw_8822cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|⏳|
 
 
