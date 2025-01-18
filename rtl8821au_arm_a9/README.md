@@ -813,7 +813,7 @@ wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ### iwconfig 5G
 
 ```
-wlan0     IEEE 802.11  ESSID:"xellossfong"  
+wlan0     IEEE 802.11  ESSID:
           Mode:Managed  Frequency:5.805 GHz  Access Point:    
           Bit Rate=175.5 Mb/s   Tx-Power=20 dBm   
           Retry short limit:7   RTS thr:off   Fragment thr:off
