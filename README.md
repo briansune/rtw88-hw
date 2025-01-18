@@ -25,12 +25,12 @@ The current finding are as follows:
 |Testbench|Device|Speed Profile|Issue|Vendor Driver|
 |:---:|:---:|:---:|:---:|:---:|
 |A35 ARM|RTL8723DS|Low-Speed|🟢|🟢|
-|A35 ARM|RTL87821CS|Low-Speed|🔴 Crash on WIFI connection "Unable to Use"|🟢|
-|A35 ARM|RTL87822CS|Low-Speed|🔴 Crash Message but no System Hang|🟢|
+|A35 ARM|RTL8821CS|Low-Speed|🔴 Crash on WIFI connection "Unable to Use"|🟢|
+|A35 ARM|RTL8822CS|Low-Speed|🔴 Crash Message but no System Hang|🟢|
 ||||||
 |A35 ARM|RTL8723DS|High-Speed|🟢|🟢|
-|A35 ARM|RTL87821CS|High-Speed|⏳|🟢|
-|A35 ARM|RTL87822CS|High-Speed|🔴 Possible Network Drop |🟢|
+|A35 ARM|RTL8821CS|High-Speed|⏳|🟢|
+|A35 ARM|RTL8822CS|High-Speed|🔴 Possible Network Drop |🟢|
 
 ## Fully RTW88 Driver Support Devices Test Report Table
 
@@ -48,7 +48,7 @@ The current finding are as follows:
 |||||||
 |<p>USB 2.0|RTL8814 [A] U<p>USB PCBA|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8814a.ko<p>rtw_8814au.ko|<img src="./images/8814au/rtl8814au_pcba.png" width="200"/>|<p>[ARM - A9 🟡](./rtl8814au_arm_a9)<p>[ARM64 - A35 🟡](./rtl8814au_arm_a35)<p>[ARM64 - A53 🟡](./rtl8814au_arm_a53)<p>STA 🟢<p>AP 🟡|
 |||||||
-|<p>USB 2.0|RTL8821 [A] U<p>Module|<p>5.4[ARM-A9]||<img src="./images/8821au/rtl8821au_pcba.png" width="200"/>|<p>ARM - A9 ⏳<p>STA ⏳<p>AP ⏳|
+|<p>USB 2.0|RTL8821 [A] U<p>Module|<p>5.4[ARM-A9]||<img src="./images/8821au/rtl8821au_pcba.png" width="200"/>|<p>[ARM - A9 🟢](./rtl8821au_arm_a9)<p>STA 🟢<p>AP 🟡|
 |<p>USB 2.0|RTL8821 [C] U<p>Dongle|<p>5.4[ARM-A9]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="./images/8821cu/rtl8821cu_usb.png" width="200"/>|<p>[ARM - A9 🟡](./rtl8821cu_arm_a9)<p>ARM64 - A35 ⏳<p>[ARM64 - A53 🟢](./rtl8821cu_arm_a53)<p>STA 🟢<p>AP 🟡|
 |<p>USB 2.0|RTL8821 [C] U<p>Dongle|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="./images/8821cu/rtl8821cu_pcba.png" width="200"/>|<p>[ARM - A9 🟡](./rtl8821cu_arm_a9_pcba)<p>STA 🟡<p>AP ⏳|
 |||||||
