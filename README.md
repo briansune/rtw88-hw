@@ -32,10 +32,12 @@ The current finding are as follows:
 |:---:|:---:|:---:|:---:|:---:|
 |A35 ARM|RTL8723DS|Low-Speed|🟢|🟢|
 |A35 ARM|RTL8821CS|Low-Speed|🔴 Crash on WIFI connection "Unable to Use"|🟢|
+|A35 ARM|RTL8822BS|Low-Speed|⏳|⏳|
 |A35 ARM|RTL8822CS|Low-Speed|🔴 Crash Message but no System Hang|🟢|
 ||||||
 |A35 ARM|RTL8723DS|High-Speed|🟢|🟢|
 |A35 ARM|RTL8821CS|High-Speed|⏳|🟢|
+|A35 ARM|RTL8822BS|High-Speed|⏳|⏳|
 |A35 ARM|RTL8822CS|High-Speed|🔴 Possible Network Drop |🟢|
 
 ## Fully RTW88 Driver Support Devices Test Report Table
