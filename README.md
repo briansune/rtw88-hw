@@ -2,6 +2,8 @@
 
 ### This repository is aim to provide RTW88 Community Driver Hardware Support Status
 
+Test Version: [58638cb909377bed524ac9aad0ce7cefc1a037da](https://github.com/lwfinger/rtw88/tree/386382ace137f5209e8e83a4cf2e044bf52e8b38)
+
 ## iperf3 @ AP/STA test explain
 
 Bluetooth speaker is used to trigger possible warning/error messages.
