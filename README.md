@@ -2,6 +2,12 @@
 
 ### This repository is aim to provide RTW88 Community Driver Hardware Support Status
 
+## iperf3 @ AP/STA test explain
+
+Bluetooth speaker is used to trigger possible warning/error messages.
+
+HOW TO DO: During the iperf3 test disconnect and reconnect the Bluetooth device and play music.
+
 ## Known Issue
 
 2.4G WIFI band could be disturbed by nearby Bluetooth Devices and possible ZigBee Devices as well!
