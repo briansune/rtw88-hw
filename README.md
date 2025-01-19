@@ -26,6 +26,10 @@ https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
 >
 > 2.4G is able to connect under SDIO High-Speed Profile.
 
+> I3: RTW88 supported devices have issue on same 2.4G/5G SSID WIFI
+> Defining band=[bg/a] in the  /etc/NetworkManager/system-connections/... to force it enters a 2G/5G
+> still introducing hard time to switch channels / frequencies.
+
 ## SDIO Devices Investigation on RTW88
 
 According to A35 DUT tested result.
