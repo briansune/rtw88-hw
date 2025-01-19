@@ -4,7 +4,7 @@
 
 |Test Board|SDIO Dongle HW|
 |-|-|
-|<img src="../images/8723ds/rtl8723ds_arm_a35.JPG" height="400"/>|<img src="../images/8723ds/rtl8723ds_pcba.JPG" height="400"/>|
+|<img src="../images/8723ds/rtl8723ds_arm_a35_cus.JPG" height="400"/>|<img src="../images/8723ds/rtl8723ds_pcba_cus.JPG" height="400"/>|
 
 ```
 6.1.111-rt42
@@ -82,7 +82,7 @@ rtw_core              217088  3 rtw_8723d,rtw_sdio,rtw_8723x
 <summary>iw list</summary>
 
 ```
-Wiphy phy0
+Wiphy phy1
 	max # scan SSIDs: 4
 	max scan IEs length: 2257 bytes
 	max # sched scan SSIDs: 0
@@ -240,10 +240,10 @@ Wiphy phy0
 
 ```
 wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.168.1.17  netmask 255.255.252.0  broadcast 192.168.3.255
-        RX packets 15  bytes 2643 (2.6 KB)
+        inet 192.168.1.18  netmask 255.255.252.0  broadcast 192.168.3.255
+        RX packets 6  bytes 1138 (1.1 KB)
         RX errors 0  dropped 1  overruns 0  frame 0
-        TX packets 27  bytes 4849 (4.8 KB)
+        TX packets 21  bytes 3935 (3.9 KB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
@@ -256,7 +256,7 @@ wlan0     IEEE 802.11  ESSID:""
           Retry short limit:7   RTS thr:off   Fragment thr:off
           Encryption key:off
           Power Management:on
-          Link Quality=36/70  Signal level=-74 dBm  
+          Link Quality=42/70  Signal level=-68 dBm  
           Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
           Tx excessive retries:0  Invalid misc:0   Missed beacon:0
 
@@ -269,9 +269,9 @@ Retrieving speedtest.net configuration...
 Retrieving speedtest.net server list...
 Selecting best server based on ping...
 Testing download speed................................................................................
-Download: 16.42 Mbit/s
+Download: 9.96 Mbit/s
 Testing upload speed......................................................................................................
-Upload: 2.43 Mbit/s
+Upload: 4.85 Mbit/s
 ```
 
 ### Network Ping Tests - Band 2.4
@@ -280,60 +280,60 @@ Upload: 2.43 Mbit/s
 
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-64 bytes from 8.8.8.8: icmp_seq=1 ttl=118 time=9.76 ms
-64 bytes from 8.8.8.8: icmp_seq=2 ttl=118 time=5.70 ms
-64 bytes from 8.8.8.8: icmp_seq=3 ttl=118 time=11.9 ms
-64 bytes from 8.8.8.8: icmp_seq=4 ttl=118 time=6.92 ms
-64 bytes from 8.8.8.8: icmp_seq=5 ttl=118 time=11.0 ms
-64 bytes from 8.8.8.8: icmp_seq=6 ttl=118 time=6.69 ms
-64 bytes from 8.8.8.8: icmp_seq=7 ttl=118 time=9.93 ms
-64 bytes from 8.8.8.8: icmp_seq=8 ttl=118 time=5.76 ms
-64 bytes from 8.8.8.8: icmp_seq=9 ttl=118 time=10.6 ms
-64 bytes from 8.8.8.8: icmp_seq=10 ttl=118 time=5.10 ms
-64 bytes from 8.8.8.8: icmp_seq=11 ttl=118 time=19.6 ms
-64 bytes from 8.8.8.8: icmp_seq=12 ttl=118 time=12.6 ms
-64 bytes from 8.8.8.8: icmp_seq=13 ttl=118 time=7.97 ms
-64 bytes from 8.8.8.8: icmp_seq=14 ttl=118 time=4.61 ms
-64 bytes from 8.8.8.8: icmp_seq=15 ttl=118 time=5.80 ms
-64 bytes from 8.8.8.8: icmp_seq=16 ttl=118 time=6.27 ms
-64 bytes from 8.8.8.8: icmp_seq=17 ttl=118 time=10.3 ms
-64 bytes from 8.8.8.8: icmp_seq=18 ttl=118 time=4.20 ms
-64 bytes from 8.8.8.8: icmp_seq=19 ttl=118 time=4.41 ms
-64 bytes from 8.8.8.8: icmp_seq=20 ttl=118 time=8.42 ms
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=118 time=192 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=118 time=198 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=118 time=5.32 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=118 time=11.2 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=118 time=6.04 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=118 time=18.7 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=118 time=6.79 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=118 time=6.28 ms
+64 bytes from 8.8.8.8: icmp_seq=9 ttl=118 time=4.81 ms
+64 bytes from 8.8.8.8: icmp_seq=10 ttl=118 time=10.1 ms
+64 bytes from 8.8.8.8: icmp_seq=11 ttl=118 time=4.91 ms
+64 bytes from 8.8.8.8: icmp_seq=12 ttl=118 time=6.29 ms
+64 bytes from 8.8.8.8: icmp_seq=13 ttl=118 time=5.06 ms
+64 bytes from 8.8.8.8: icmp_seq=14 ttl=118 time=5.64 ms
+64 bytes from 8.8.8.8: icmp_seq=15 ttl=118 time=18.0 ms
+64 bytes from 8.8.8.8: icmp_seq=16 ttl=118 time=6.30 ms
+64 bytes from 8.8.8.8: icmp_seq=17 ttl=118 time=10.4 ms
+64 bytes from 8.8.8.8: icmp_seq=18 ttl=118 time=4.35 ms
+64 bytes from 8.8.8.8: icmp_seq=19 ttl=118 time=11.5 ms
+64 bytes from 8.8.8.8: icmp_seq=20 ttl=118 time=7.64 ms
 
 --- 8.8.8.8 ping statistics ---
-20 packets transmitted, 20 received, 0% packet loss, time 19029ms
-rtt min/avg/max/mdev = 4.204/8.381/19.626/3.642 ms
+20 packets transmitted, 20 received, 0% packet loss, time 19028ms
+rtt min/avg/max/mdev = 4.345/27.016/198.469/56.299 ms
 ```
 
 #### Self-Ping 
 
 ```
-PING 192.168.1.17 (192.168.1.17) 10000(10028) bytes of data.
-10008 bytes from 192.168.1.17: icmp_seq=1 ttl=64 time=0.128 ms
-10008 bytes from 192.168.1.17: icmp_seq=2 ttl=64 time=0.148 ms
-10008 bytes from 192.168.1.17: icmp_seq=3 ttl=64 time=0.093 ms
-10008 bytes from 192.168.1.17: icmp_seq=4 ttl=64 time=0.098 ms
-10008 bytes from 192.168.1.17: icmp_seq=5 ttl=64 time=0.152 ms
-10008 bytes from 192.168.1.17: icmp_seq=6 ttl=64 time=0.144 ms
-10008 bytes from 192.168.1.17: icmp_seq=7 ttl=64 time=0.117 ms
-10008 bytes from 192.168.1.17: icmp_seq=8 ttl=64 time=0.138 ms
-10008 bytes from 192.168.1.17: icmp_seq=9 ttl=64 time=0.109 ms
-10008 bytes from 192.168.1.17: icmp_seq=10 ttl=64 time=0.104 ms
-10008 bytes from 192.168.1.17: icmp_seq=11 ttl=64 time=0.125 ms
-10008 bytes from 192.168.1.17: icmp_seq=12 ttl=64 time=0.151 ms
-10008 bytes from 192.168.1.17: icmp_seq=13 ttl=64 time=0.146 ms
-10008 bytes from 192.168.1.17: icmp_seq=14 ttl=64 time=0.143 ms
-10008 bytes from 192.168.1.17: icmp_seq=15 ttl=64 time=0.099 ms
-10008 bytes from 192.168.1.17: icmp_seq=16 ttl=64 time=0.098 ms
-10008 bytes from 192.168.1.17: icmp_seq=17 ttl=64 time=0.113 ms
-10008 bytes from 192.168.1.17: icmp_seq=18 ttl=64 time=0.154 ms
-10008 bytes from 192.168.1.17: icmp_seq=19 ttl=64 time=0.170 ms
-10008 bytes from 192.168.1.17: icmp_seq=20 ttl=64 time=0.142 ms
+PING 192.168.1.18 (192.168.1.18) 10000(10028) bytes of data.
+10008 bytes from 192.168.1.18: icmp_seq=1 ttl=64 time=0.123 ms
+10008 bytes from 192.168.1.18: icmp_seq=2 ttl=64 time=0.146 ms
+10008 bytes from 192.168.1.18: icmp_seq=3 ttl=64 time=0.122 ms
+10008 bytes from 192.168.1.18: icmp_seq=4 ttl=64 time=0.144 ms
+10008 bytes from 192.168.1.18: icmp_seq=5 ttl=64 time=0.146 ms
+10008 bytes from 192.168.1.18: icmp_seq=6 ttl=64 time=0.142 ms
+10008 bytes from 192.168.1.18: icmp_seq=7 ttl=64 time=0.137 ms
+10008 bytes from 192.168.1.18: icmp_seq=8 ttl=64 time=0.105 ms
+10008 bytes from 192.168.1.18: icmp_seq=9 ttl=64 time=0.107 ms
+10008 bytes from 192.168.1.18: icmp_seq=10 ttl=64 time=0.100 ms
+10008 bytes from 192.168.1.18: icmp_seq=11 ttl=64 time=0.146 ms
+10008 bytes from 192.168.1.18: icmp_seq=12 ttl=64 time=0.142 ms
+10008 bytes from 192.168.1.18: icmp_seq=13 ttl=64 time=0.105 ms
+10008 bytes from 192.168.1.18: icmp_seq=14 ttl=64 time=0.099 ms
+10008 bytes from 192.168.1.18: icmp_seq=15 ttl=64 time=0.095 ms
+10008 bytes from 192.168.1.18: icmp_seq=16 ttl=64 time=0.105 ms
+10008 bytes from 192.168.1.18: icmp_seq=17 ttl=64 time=0.138 ms
+10008 bytes from 192.168.1.18: icmp_seq=18 ttl=64 time=0.147 ms
+10008 bytes from 192.168.1.18: icmp_seq=19 ttl=64 time=0.141 ms
+10008 bytes from 192.168.1.18: icmp_seq=20 ttl=64 time=0.091 ms
 
---- 192.168.1.17 ping statistics ---
-20 packets transmitted, 20 received, 0% packet loss, time 19464ms
-rtt min/avg/max/mdev = 0.093/0.128/0.170/0.022 ms
+--- 192.168.1.18 ping statistics ---
+20 packets transmitted, 20 received, 0% packet loss, time 19450ms
+rtt min/avg/max/mdev = 0.091/0.124/0.147/0.020 ms
 ```
 
 ### Server & Client Test via iperf3 (PC-Router-DUT)
@@ -346,49 +346,50 @@ rtt min/avg/max/mdev = 0.093/0.128/0.170/0.022 ms
 -----------------------------------------------------------
 Server listening on 5201
 -----------------------------------------------------------
-Accepted connection from 192.168.1.3, port 61045
-[  5] local 192.168.1.17 port 5201 connected to 192.168.1.3 port 61046
+Accepted connection from 192.168.1.3, port 53705
+[  5] local 192.168.1.18 port 5201 connected to 192.168.1.3 port 53706
 [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-[  5]   0.00-1.00   sec   704 KBytes  5.77 Mbits/sec    0   69.9 KBytes       
-[  5]   1.00-2.00   sec   157 KBytes  1.28 Mbits/sec    0   69.9 KBytes       
-[  5]   2.00-3.00   sec   314 KBytes  2.57 Mbits/sec    1   69.9 KBytes       
-[  5]   3.00-4.00   sec   157 KBytes  1.28 Mbits/sec    0   69.9 KBytes       
-[  5]   4.00-5.00   sec   157 KBytes  1.28 Mbits/sec    1   69.9 KBytes       
-[  5]   5.00-6.00   sec   157 KBytes  1.29 Mbits/sec    1   69.9 KBytes       
-[  5]   6.00-7.00   sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]   7.00-8.00   sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]   8.00-9.00   sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]   9.00-10.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  10.00-11.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  12.00-13.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  14.00-15.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  15.00-16.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  16.00-17.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  17.00-18.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  18.00-19.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  19.00-20.00  sec  0.00 Bytes  0.00 bits/sec    0   1.43 KBytes       
-[  5]  20.00-21.00  sec  0.00 Bytes  0.00 bits/sec    1   69.9 KBytes       
-[  5]  21.00-22.00  sec  0.00 Bytes  0.00 bits/sec    0   69.9 KBytes       
-[  5]  22.00-23.00  sec   157 KBytes  1.29 Mbits/sec    0   69.9 KBytes       
-[  5]  23.00-24.00  sec   157 KBytes  1.28 Mbits/sec    0   69.9 KBytes       
-[  5]  24.00-25.00  sec   345 KBytes  2.83 Mbits/sec    0   69.9 KBytes       
-[  5]  25.00-26.00  sec  0.00 Bytes  0.00 bits/sec    1   69.9 KBytes       
-[  5]  26.00-27.00  sec   314 KBytes  2.57 Mbits/sec    0   69.9 KBytes       
-[  5]  27.00-28.00  sec   188 KBytes  1.54 Mbits/sec    0   69.9 KBytes       
-[  5]  28.00-29.00  sec   314 KBytes  2.57 Mbits/sec    0   69.9 KBytes       
-[  5]  29.00-30.00  sec   314 KBytes  2.57 Mbits/sec    0   69.9 KBytes       
-[  5]  30.00-30.16  sec  0.00 Bytes  0.00 bits/sec    0   69.9 KBytes       
+[  5]   0.00-1.00   sec   767 KBytes  6.28 Mbits/sec    0    123 KBytes       
+[  5]   1.00-2.00   sec  0.00 Bytes  0.00 bits/sec    0    123 KBytes       
+[  5]   2.00-3.00   sec   251 KBytes  2.06 Mbits/sec    0    123 KBytes       
+[  5]   3.00-4.00   sec  0.00 Bytes  0.00 bits/sec    1    123 KBytes       
+[  5]   4.00-5.00   sec  0.00 Bytes  0.00 bits/sec    1    123 KBytes       
+[  5]   5.00-6.00   sec  0.00 Bytes  0.00 bits/sec    0    123 KBytes       
+[  5]   6.00-7.00   sec  0.00 Bytes  0.00 bits/sec    0    123 KBytes       
+[  5]   7.00-8.00   sec   502 KBytes  4.11 Mbits/sec    0    123 KBytes       
+[  5]   8.00-9.00   sec  0.00 Bytes  0.00 bits/sec    1    123 KBytes       
+[  5]   9.00-10.00  sec  0.00 Bytes  0.00 bits/sec    0    124 KBytes       
+[  5]  10.00-11.00  sec  0.00 Bytes  0.00 bits/sec    0    124 KBytes       
+[  5]  11.00-12.00  sec  0.00 Bytes  0.00 bits/sec    1    124 KBytes       
+[  5]  12.00-13.00  sec  0.00 Bytes  0.00 bits/sec    0    125 KBytes       
+[  5]  13.00-14.00  sec  0.00 Bytes  0.00 bits/sec    0    125 KBytes       
+[  5]  14.00-15.00  sec  0.00 Bytes  0.00 bits/sec    0    125 KBytes       
+[  5]  15.00-16.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  16.00-17.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  17.00-18.00  sec   251 KBytes  2.06 Mbits/sec    1    125 KBytes       
+[  5]  18.00-19.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  19.00-20.00  sec  0.00 Bytes  0.00 bits/sec    1    125 KBytes       
+[  5]  20.00-21.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  21.00-22.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  22.00-23.00  sec   282 KBytes  2.31 Mbits/sec    0    125 KBytes       
+[  5]  23.00-24.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  24.00-25.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  25.00-26.00  sec   251 KBytes  2.06 Mbits/sec    1    125 KBytes       
+[  5]  26.00-27.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  27.00-28.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  28.00-29.00  sec   251 KBytes  2.06 Mbits/sec    1    125 KBytes       
+[  5]  29.00-30.00  sec   251 KBytes  2.06 Mbits/sec    0    125 KBytes       
+[  5]  30.00-30.12  sec  0.00 Bytes  0.00 bits/sec    0    125 KBytes       
 - - - - - - - - - - - - - - - - - - - - - - - - -
 [ ID] Interval           Transfer     Bitrate         Retr
-[  5]   0.00-30.16  sec  3.35 MBytes   933 Kbits/sec    5             sender
+[  5]   0.00-30.12  sec  4.95 MBytes  1.38 Mbits/sec    8             sender
 -----------------------------------------------------------
 Server listening on 5201
 -----------------------------------------------------------
-[  261.999351] rtw_core: loading out-of-tree module taints kernel.
-[  262.714269] rtw_8723ds mmc1:0001:1: Firmware version 48.0.0, H2C version 0
-[  370.665267] rtw_8723ds mmc1:0001:1: failed to get tx report from firmware
+[  117.284109] rtw_core: loading out-of-tree module taints kernel.
+[  118.194724] rtw_8723ds mmc1:0001:1: Firmware version 48.0.0, H2C version 0
+[  213.692724] rtw_8723ds mmc1:0001:1: Firmware version 48.0.0, H2C version 0
+[  361.033343] rtw_8723ds mmc1:0001:1: failed to get tx report from firmware
 ```
 
 </details>
@@ -434,7 +435,7 @@ wlan0: AP-ENABLED
 
 #### Server & Client Test via iperf3 (PC-DUT)
 
-Host unable to connect!
+Host unable to connect to AP!
 
 <details>
 
@@ -444,15 +445,16 @@ Host unable to connect!
 Wlan0 Not Ready.
 Start AP @ WLAN0
 Configuration file: /etc/hostapd/hostapd.conf
-Using interface wlan0 with hwaddr 34:75:63:28:4b:e4 and ssid "AP-TEST"
+Using interface wlan0 with hwaddr a8:96:09:9e:05:fd and ssid "AP-TEST"
 wlan0: interface state UNINITIALIZED->ENABLED
 wlan0: AP-ENABLED 
 -----------------------------------------------------------
 Server listening on 5201
 -----------------------------------------------------------
-[  261.999351] rtw_core: loading out-of-tree module taints kernel.
-[  262.714269] rtw_8723ds mmc1:0001:1: Firmware version 48.0.0, H2C version 0
-[  370.665267] rtw_8723ds mmc1:0001:1: failed to get tx report from firmware
+[  117.284109] rtw_core: loading out-of-tree module taints kernel.
+[  118.194724] rtw_8723ds mmc1:0001:1: Firmware version 48.0.0, H2C version 0
+[  213.692724] rtw_8723ds mmc1:0001:1: Firmware version 48.0.0, H2C version 0
+[  361.033343] rtw_8723ds mmc1:0001:1: failed to get tx report from firmware
 ```
 
 </details>
