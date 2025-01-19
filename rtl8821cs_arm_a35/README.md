@@ -2,7 +2,7 @@
 
 ### Test Gear
 
-|Test Board|SDIO EVM HW|
+|Test Board|SDIO Module HW|
 |-|-|
 |<img src="../images/8821cs/rtl8821cs_arm_a35.png" height="400"/>|<img src="../images/8821cs/rtl8821cs_module.png" height="400"/>|
 

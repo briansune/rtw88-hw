@@ -2,7 +2,7 @@
 
 ### Test SDIO Gear
 
-|Test Board|SDIO Dongle HW|
+|Test Board|SDIO Module HW|
 |-|-|
 |<img src="../images/8723ds/rtl8723ds_arm_a35.JPG" height="400"/>|<img src="../images/8723ds/rtl8723ds_pcba.JPG" height="400"/>|
 
