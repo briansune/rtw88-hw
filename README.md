@@ -44,12 +44,12 @@ The current finding are as follows:
 |:---:|:---:|:---:|:---:|:---:|
 |A35 ARM|RTL8723DS|Low-Speed|🟢|🟢|
 |A35 ARM|RTL8821CS|Low-Speed|🔴 Crash on WIFI connection "Unable to Use"|🟢|
-|A35 ARM|RTL8822BS|Low-Speed|⏳|⏳|
+|A35 ARM|RTL8822BS|Low-Speed|⏳|❌ Support upto Kernel 5.4|
 |A35 ARM|RTL8822CS|Low-Speed|🔴 Crash Message but no System Hang|🟢|
 ||||||
 |A35 ARM|RTL8723DS|High-Speed|🟢|🟢|
 |A35 ARM|RTL8821CS|High-Speed|⏳|🟢|
-|A35 ARM|RTL8822BS|High-Speed|⏳|⏳|
+|A35 ARM|RTL8822BS|High-Speed|🟡 5G STA & AP Not Working|❌ Support upto Kernel 5.4|
 |A35 ARM|RTL8822CS|High-Speed|🔴 Possible Network Drop |🟢|
 
 ## Fully RTW88 Driver Support Devices Test Report Table
@@ -79,7 +79,7 @@ The current finding are as follows:
 |||||||
 |SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM - A35 🔴](./rtl8821cs_arm_a35)<p>STA 🔴<p>AP 🔴|
 |||||||
-|SDIO|RTL8822 [B] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|⏳|
+|SDIO|RTL8822 [B] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|<p>[ARM - A35 (High-Speed) 🟡](./rtl8822bs_arm_a35)<p>STA 🟡<p>AP 🔴|
 |SDIO|RTL8822 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822c.ko<p>rtw_8822cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|⏳|
 
 
