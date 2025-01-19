@@ -464,6 +464,8 @@ Server listening on 5201
 [   54.135420] rtw_8821cs mmc1:0001:1: Firmware version 24.11.0, H2C version 12
 [   95.341259] rtw_8821cs mmc1:0001:1: Firmware version 24.11.0, H2C version 12
 ```
+
+</details>
 ### Network Manager - Band 5G
 
 ```
