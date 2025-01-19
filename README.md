@@ -81,5 +81,11 @@ The current finding are as follows:
 |||||||
 |SDIO|RTL8822 [B] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|<p>[ARM - A35 (High-Speed) 🟡](./rtl8822bs_arm_a35)<p>STA 🟡<p>AP 🔴|
 |SDIO|RTL8822 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822c.ko<p>rtw_8822cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|⏳|
-
+|||||||
+|PCIe|RTL8723 [D] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8723de/rtl8723de_m2card.JPG" width="200"/>|⏳|
+|||||||
+|PCIe|RTL8821 [C] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8821ce/rtl8821ce_m2card.JPG" width="200"/>|⏳|
+|||||||
+|PCIe|RTL8822 [B] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8822be/rtl8822be_m2card.JPG" width="200"/>|⏳|
+|PCIe|RTL8822 [C] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8822ce/rtl8822ce_m2card.JPG" width="200"/>|⏳|
 
