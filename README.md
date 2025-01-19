@@ -75,7 +75,8 @@ The current finding are as follows:
 |<p>USB 2.0<p>USB 3.0|RTL8822 [B] U<p>Dongle|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8822b.ko<p>rtw_8822bu.ko|<img src="./images/8822bu/rtl8822bu_usb.png" width="200"/>|<p>[ARM - A9 🟢](./rtl8822bu_arm_a9)<p>ARM64 - A35 🟡<p>[ARM64 - A53 🟡](./rtl8822bu_arm_a53)<p>STA 🟢<p>AP 🟡||
 |<p>USB 2.0|RTL8822 [C] U<p>Module|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8822c.ko<p>rtw_8822cu.ko|<img src="./images/8822cu/rtl8822cu_module.JPG" width="200"/>|<p>ARM - A9 ⏳<p>[ARM - A35 🟢](./rtl8822cu_arm_a35)<p>ARM - A53 ⏳<p>STA 🟢<p>AP 🟢|
 |||||||
-|SDIO|RTL8723 [D] S<p>Custom HW|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_custom.JPG" width="200"/>|<p>ARM - A9 🟢<p>ARM64 - A35 🟡<p>ARM64 - A53 ⏳<p>STA ⏳<p>AP ⏳|
+|SDIO|RTL8723 [D] S<p>Custom HW|<p>5.4[ARM-A9/53]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_custom.JPG" width="200"/>|<p>ARM - A9 🟢<p>STA ⏳<p>AP ⏳|
+|SDIO|RTL8723 [D] S<p>Module HW|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_pcba.JPG" width="200"/>|<p>ARM64 - A35 🟡<p>STA ⏳<p>AP ⏳|
 |||||||
 |SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM - A35 🔴](./rtl8821cs_arm_a35)<p>STA 🔴<p>AP 🔴|
 |||||||
