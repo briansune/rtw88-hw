@@ -16,6 +16,16 @@ HOW TO DO: During the iperf3 test disconnect and reconnect the Bluetooth device 
 
 https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
 
+## Issue found during testing
+
+> I1: RTL8822BS is connected to merged 2.4G+5G Router.
+> 
+> Both 2.4G and 5G cannot connect under SDIO High-Speed Profile.
+
+> I2: RTL8822BS is connected to splitted 2.4G+5G Router.
+>
+> 2.4G is able to connect under SDIO High-Speed Profile.
+
 ## SDIO Devices Investigation on RTW88
 
 According to A35 DUT tested result.
