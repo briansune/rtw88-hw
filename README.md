@@ -2,6 +2,8 @@
 
 ### This repository is aim to provide RTW88 Community Driver Hardware Support Status
 
+Test Version: [58638cb909377bed524ac9aad0ce7cefc1a037da](https://github.com/lwfinger/rtw88/tree/386382ace137f5209e8e83a4cf2e044bf52e8b38)
+
 ## iperf3 @ AP/STA test explain
 
 Bluetooth speaker is used to trigger possible warning/error messages.
@@ -13,6 +15,16 @@ HOW TO DO: During the iperf3 test disconnect and reconnect the Bluetooth device 
 2.4G WIFI band could be disturbed by nearby Bluetooth Devices and possible ZigBee Devices as well!
 
 https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
+
+## Issue found during testing
+
+> I1: RTL8822BS is connected to merged 2.4G+5G Router.
+> 
+> Both 2.4G and 5G cannot connect under SDIO High-Speed Profile.
+
+> I2: RTL8822BS is connected to splitted 2.4G+5G Router.
+>
+> 2.4G is able to connect under SDIO High-Speed Profile.
 
 ## SDIO Devices Investigation on RTW88
 
@@ -32,10 +44,12 @@ The current finding are as follows:
 |:---:|:---:|:---:|:---:|:---:|
 |A35 ARM|RTL8723DS|Low-Speed|🟢|🟢|
 |A35 ARM|RTL8821CS|Low-Speed|🔴 Crash on WIFI connection "Unable to Use"|🟢|
+|A35 ARM|RTL8822BS|Low-Speed|⏳|⏳|
 |A35 ARM|RTL8822CS|Low-Speed|🔴 Crash Message but no System Hang|🟢|
 ||||||
 |A35 ARM|RTL8723DS|High-Speed|🟢|🟢|
 |A35 ARM|RTL8821CS|High-Speed|⏳|🟢|
+|A35 ARM|RTL8822BS|High-Speed|⏳|⏳|
 |A35 ARM|RTL8822CS|High-Speed|🔴 Possible Network Drop |🟢|
 
 ## Fully RTW88 Driver Support Devices Test Report Table
@@ -54,7 +68,7 @@ The current finding are as follows:
 |||||||
 |<p>USB 2.0|RTL8814 [A] U<p>USB PCBA|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8814a.ko<p>rtw_8814au.ko|<img src="./images/8814au/rtl8814au_pcba.png" width="200"/>|<p>[ARM - A9 🟡](./rtl8814au_arm_a9)<p>[ARM64 - A35 🟡](./rtl8814au_arm_a35)<p>[ARM64 - A53 🟡](./rtl8814au_arm_a53)<p>STA 🟢<p>AP 🟡|
 |||||||
-|<p>USB 2.0|RTL8821 [A] U<p>Module|<p>5.4[ARM-A9]||<img src="./images/8821au/rtl8821au_pcba.png" width="200"/>|<p>[ARM - A9 🟢](./rtl8821au_arm_a9)<p>STA 🟢<p>AP 🟡|
+|<p>USB 2.0|RTL8821 [A] U<p>Module|<p>5.4[ARM-A9]||<img src="./images/8821au/rtl8821au_pcba.png" width="200"/>|<p>[ARM - A9 🟢](./rtl8821au_arm_a9)<p>ARM64 - A35 ⏳<p>ARM64 - A53 ⏳<p>STA 🟢<p>AP 🟡|
 |<p>USB 2.0|RTL8821 [C] U<p>Dongle|<p>5.4[ARM-A9]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="./images/8821cu/rtl8821cu_usb.png" width="200"/>|<p>[ARM - A9 🟡](./rtl8821cu_arm_a9)<p>ARM64 - A35 ⏳<p>[ARM64 - A53 🟢](./rtl8821cu_arm_a53)<p>STA 🟢<p>AP 🟡|
 |<p>USB 2.0|RTL8821 [C] U<p>Dongle|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="./images/8821cu/rtl8821cu_pcba.png" width="200"/>|<p>[ARM - A9 🟡](./rtl8821cu_arm_a9_pcba)<p>STA 🟡<p>AP ⏳|
 |||||||
@@ -65,7 +79,7 @@ The current finding are as follows:
 |||||||
 |SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM - A35 🔴](./rtl8821cs_arm_a35)<p>STA 🔴<p>AP 🔴|
 |||||||
-|SDIO|RTL8822 [B] S<p>Module|||<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|⏳|
-|SDIO|RTL8822 [C] S<p>Module|||<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|⏳|
+|SDIO|RTL8822 [B] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|⏳|
+|SDIO|RTL8822 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822c.ko<p>rtw_8822cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|⏳|
 
 
