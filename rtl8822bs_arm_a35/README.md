@@ -4,7 +4,7 @@
 
 |Test Board|SDIO Dongle HW|
 |-|-|
-|<img src="../images/8822bs/rtl8822bs_arm_a35.JPG" height="400"/>|<img src="../images/" height="400"/>|
+|<img src="../images/8822bs/rtl8822bs_arm_a35.JPG" height="400"/>|<img src="../images/8822bs/rtl8822bs_module.png" height="400"/>|
 
 ```
 6.1.111-rt42
@@ -314,7 +314,8 @@ Wiphy phy0
 ```
 
 </details>
-### Network Manager - Band 2.4
+
+### Network Manager - Band 2.4
 
 ```
 wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
