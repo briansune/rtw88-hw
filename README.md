@@ -55,7 +55,7 @@ The current finding are as follows:
 ||||||
 |A35 ARM|RTL8723DS|High-Speed|🟡 AP Not Working|🟢|
 |A35 ARM|RTL8821CS|High-Speed|🟡 AP Not Working|🟢|
-|A35 ARM|RTL8822BS|High-Speed|🟡 5G STA & AP Not Working|❌ Support upto Kernel 5.4|
+|A35 ARM|RTL8822BS|High-Speed|🟡 AP Not Working|❌ Support upto Kernel 5.4|
 |A35 ARM|RTL8822CS|High-Speed|🟡 AP Not Working|🟢|
 
 ## Fully RTW88 Driver Support Devices Test Report Table
