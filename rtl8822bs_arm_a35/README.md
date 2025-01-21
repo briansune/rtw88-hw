@@ -468,6 +468,8 @@ Server listening on 5201
 [   37.560632] rtw_8822bs mmc1:0001:1: Firmware version 30.20.0, H2C version 14
 ```
 
+</details>
+
 ### Network Manager - Band 5G
 
 ```
