@@ -22,11 +22,7 @@ https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
 > 
 > Both 2.4G and 5G cannot connect under SDIO High-Speed Profile.
 
-> I2: RTL8822BS is connected to splitted 2.4G+5G Router.
->
-> 2.4G is able to connect under SDIO High-Speed Profile.
-
-> I3: RTW88 supported devices have issue on same 2.4G/5G SSID WIFI
+> I2: RTW88 supported devices have issue on same 2.4G/5G SSID WIFI
 > 
 > Defining band=[bg/a] in the  /etc/NetworkManager/system-connections/... to force it enters a 2G/5G
 > 
