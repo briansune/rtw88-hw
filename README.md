@@ -54,6 +54,15 @@ The current finding are as follows:
 |A35 ARM|RTL8822BS|High-Speed|🟡 AP Not Working|❌ Support upto Kernel 5.4|
 |A35 ARM|RTL8822CS|High-Speed|🟡 AP Not Working|🟢|
 
+## PCIe M.2 A+E aka NGFF
+
+|Testbench|Device|Speed Profile|Issue|
+|:---:|:---:|:---:|:---:|
+|A53 ARM64|RTL8723DE|x1 2.5/5G 128/256b|⏳|
+|A53 ARM64|RTL8821CE|x1 2.5/5G 128/256b|⏳|
+|A53 ARM64|RTL8822BE|x1 2.5/5G 128/256b|⏳|
+|A53 ARM64|RTL8822CE|x1 2.5/5G 128/256b|⏳|
+
 ## Fully RTW88 Driver Support Devices Test Report Table
 
 |Phy Interface|<p>Chip #<p>HW Type|DUT Kernel #|Driver Tree|HW Image|Status|
