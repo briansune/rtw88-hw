@@ -58,10 +58,17 @@ The current finding are as follows:
 
 |Testbench|Device|Speed Profile|Issue|
 |:---:|:---:|:---:|:---:|
-|A53 ARM64|RTL8723DE|x1 2.5/5G 128/256b|⏳|
-|A53 ARM64|RTL8821CE|x1 2.5/5G 128/256b|⏳|
-|A53 ARM64|RTL8822BE|x1 2.5/5G 128/256b|⏳|
-|A53 ARM64|RTL8822CE|x1 2.5/5G 128/256b|⏳|
+|A53 ARM64|RTL8723DE|x1 2.5G 128 Bytes|⏳|
+|A53 ARM64|RTL8723DE|x1 5.0G 256 Bytes|⏳|
+|||||
+|A53 ARM64|RTL8821CE|x1 2.5G 128 Bytes|⏳|
+|A53 ARM64|RTL8821CE|x1 5.0G 256 Bytes|⏳|
+|||||
+|A53 ARM64|RTL8822BE|x1 2.5G 128 Bytes|⏳|
+|A53 ARM64|RTL8822BE|x1 5.0G 256 Bytes|⏳|
+|||||
+|A53 ARM64|RTL8822CE|x1 2.5G 128/256b|⏳|
+|A53 ARM64|RTL8822CE|x1 5.0G 256/256b|⏳|
 
 ## Fully RTW88 Driver Support Devices Test Report Table
 
