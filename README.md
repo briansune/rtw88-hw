@@ -28,6 +28,16 @@ https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
 > 
 > still introducing hard time to switch channels / frequencies.
 
+> i3: During RTL8822BS debugging.
+>
+> A puzzling behavior under modified vendor driver is found
+>
+> iperf3 -s direct host AP shows a complete blocked the 2.4G band
+>
+> BT device such as speaker music stream is stop working.
+>
+> RTW88 does not introduce such issue.
+
 ## SDIO Devices Investigation on RTW88
 
 According to A35 DUT tested result.
