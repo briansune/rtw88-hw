@@ -1,6 +1,6 @@
 # RTW88 Hardware Testing
 
-### This repository is aim to provide RTW88 Community Driver Hardware Support Status Over ARM-Based Devices
+### This repository is aim to provide RTW88 Community Driver Hardware Support Status Over ARM-Based Devices (FPSOC)
 
 Test Version: [58638cb909377bed524ac9aad0ce7cefc1a037da](https://github.com/lwfinger/rtw88/tree/386382ace137f5209e8e83a4cf2e044bf52e8b38)
 
@@ -40,17 +40,23 @@ https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
 
 ## SDIO Devices Investigation on RTW88
 
-According to A35 DUT tested result.
+Both A53 and A35 test gear is used to verify the RTW88 SDIO supported WIFI chips.
 
-DTS/DTSI device tree SDIO profile could introduce unstable issue on RTW88 or possible crashes.
+> I1: According to A35 DUT tested result.
+> 
+> DTS/DTSI device tree SDIO profile could introduce unstable issue on RTW88 or possible crashes.
+>
+> All SDIO should first detected from low clock speed then enter high speed frequency ranges.
+> 
+> Most SDIO explain could be found [here](https://www.prodigytechno.com/sdio-protocol).
 
-All SDIO should first detected from low clock speed then enter high speed frequency ranges.
+> I2: Test gear limitation: due to most FPSOC board do not introduce two SDIO or solderable PCB slot.
+>
+> All possible setup/hold time slacks are not tested and cannot sure!
+>
+> What the follow setup runs are most likely stable enough to use.
 
-Most SDIO explain could be found [here](https://www.prodigytechno.com/sdio-protocol).
-
-The current finding are as follows:
-
--> Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
+Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 
 |Testbench|Device|Speed Profile|Issue|Vendor Driver|
 |:---:|:---:|:---:|:---:|:---:|
@@ -124,6 +130,7 @@ The current finding are as follows:
 |SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM-A35 (Low-Speed) 🔴](./rtl8821cs_arm_a35)<p>STA 🔴<p>AP 🔴|
 |SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8821cs_arm_a35_hs)<p>STA 🟢<p>AP 🟡|
 |SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8821cs_arm_a35_hs)<p>STA 🟢<p>AP 🟡|
+|SDIO|RTL8821 [C] S<p>PCBA EVM|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM-A53 (High-Speed) 🟡](./rtl8821cs_arm_a53)<p>STA 🟢<p>AP 🟡|
 |||||||
 |SDIO|RTL8822 [B] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822bs_arm_a35)<p>STA 🟢<p>AP 🟡|
 |SDIO|RTL8822 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822c.ko<p>rtw_8822cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822cs_arm_a35)<p>STA 🟢<p>AP 🟡|
