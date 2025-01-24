@@ -127,7 +127,7 @@ The current finding are as follows:
 |||||||
 |SDIO|RTL8822 [B] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822bs_arm_a35)<p>STA 🟢<p>AP 🟡|
 |SDIO|RTL8822 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822c.ko<p>rtw_8822cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822cs_arm_a35)<p>STA 🟢<p>AP 🟡|
-|SDIO|RTL8822 [C] S<p>PCBA EVM|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8822cs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822cs_arm_a53)<p>STA 🟢<p>AP 🟡|
+|SDIO|RTL8822 [C] S<p>PCBA EVM|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822cs_arm_a53)<p>STA 🟢<p>AP 🟡|
 
 ### RTW88 Revision - [c56536cfa522b42cfa73c2c4332000e6aa5bcf97](https://github.com/lwfinger/rtw88/tree/c56536cfa522b42cfa73c2c4332000e6aa5bcf97)
 
