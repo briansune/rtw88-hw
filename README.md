@@ -116,12 +116,15 @@ The current finding are as follows:
 
 |Phy Interface|<p>Chip #<p>HW Type|DUT Kernel #|Driver Tree|HW Image|Status|
 |:---:|:---|:---|:---:|:---:|---:|
-|SDIO|RTL8723 [D] S<p>Custom HW|<p>5.4[ARM-A9]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_custom.JPG" width="200"/>|<p>ARM-A9 (High-Speed) 🟢<p>STA ⏳<p>AP ⏳|
+|SDIO|RTL8723 [D] S<p>Custom HW|<p>5.4[ARM-A9]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_custom.JPG" width="200"/>|<p>ARM-A9 (High-Speed) 🟢<p>STA 🟢<p>AP 🟡|
 |SDIO|RTL8723 [D] S<p>Module HW|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_pcba.JPG" width="200"/>|<p>[ARM64-A35 (High-Speed) 🟡](./rtl8723ds_arm_a35_mod)<p>STA 🟢<p>AP 🟡|
 |SDIO|RTL8723 [D] S<p>Module HW|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_pcba_cus.JPG" width="200"/>|<p>[ARM64-A35 (High-Speed) 🟡](./rtl8723ds_arm_a35_cus)<p>STA 🟢<p>AP 🟡|
+|SDIO|RTL8723 [D] S<p>Custom HW|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_pcba.JPG" width="200"/>|<p>ARM-A53 (High-Speed) 🟢<p>STA 🟢<p>AP 🟡|
 |||||||
 |SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM-A35 (Low-Speed) 🔴](./rtl8821cs_arm_a35)<p>STA 🔴<p>AP 🔴|
 |SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8821cs_arm_a35_hs)<p>STA 🟢<p>AP 🟡|
+|SDIO|RTL8821 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8821cs_arm_a35_hs)<p>STA 🟢<p>AP 🟡|
+|SDIO|RTL8821 [C] S<p>PCBA EVM|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8821cs/rtl8821cs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8821cs_arm_a53)<p>STA 🟢<p>AP 🟡|
 |||||||
 |SDIO|RTL8822 [B] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822bs_arm_a35)<p>STA 🟢<p>AP 🔴|
 |SDIO|RTL8822 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822c.ko<p>rtw_8822cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822cs_arm_a35)<p>STA 🟢<p>AP 🔴|
