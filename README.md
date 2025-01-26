@@ -108,7 +108,7 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 |<p>USB 2.0|RTL8821 [C] U<p>Module|<p>5.4[ARM-A9]<p>6.6[ARM-A9]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8821c.ko<p>rtw_8821cu.ko|<p><img src="./images/8821cu/rtl8821cu_pcba.png" width="200"/>|<p>[ARM-A9-5.4 🟢](./rtl8821cu_arm_a9_pcba)[ARM-A9-6.6 🟡](./rtl8821cu_arm_a9_pcba_6)<p>STA 🟢<p>AP 🟡|
 |||||||
 |<p>USB 2.0<p>USB 3.0|RTL8822 [B] U<p>Dongle|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8822b.ko<p>rtw_8822bu.ko|<img src="./images/8822bu/rtl8822bu_usb.png" width="200"/>|<p>[ARM-A9 🟢](./rtl8822bu_arm_a9)<p>[ARM64-A35 🟡](./rtl8822bu_arm_a35)<p>[ARM64-A53 🟡](./rtl8822bu_arm_a53)<p>STA 🟢<p>AP 🟡||
-|<p>USB 2.0|RTL8822 [C] U<p>Module|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8822c.ko<p>rtw_8822cu.ko|<img src="./images/8822cu/rtl8822cu_module.JPG" width="200"/>|<p>ARM-A9 ⏳<p>[ARM-A35 🟢](./rtl8822cu_arm_a35)<p>ARM-A53 ⏳<p>STA 🟢<p>AP 🟢|
+|<p>USB 2.0|RTL8822 [C] U<p>Module|<p>5.4[ARM-A9/53]<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_usb.ko<p>rtw_8822c.ko<p>rtw_8822cu.ko|<img src="./images/8822cu/rtl8822cu_module.JPG" width="200"/>|<p>[ARM-A9 🟢](./rtl8822cu_arm_a9)<p>[ARM-A35 🟢](./rtl8822cu_arm_a35)<p>ARM-A53 ⏳<p>STA 🟢<p>AP 🟢|
 |||||||
 |PCIe|RTL8723 [D] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8723de/rtl8723de_m2card.JPG" width="200"/>|⏳|
 |||||||
@@ -135,7 +135,7 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 |SDIO|RTL8822 [B] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822bs_arm_a35)<p>STA 🟢<p>AP 🟡|
 |SDIO|RTL8822 [B] S<p>PCBA EVM|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822b.ko<p>rtw_8822bs.ko|<img src="./images/8822bs/rtl8822bs_module.png" width="200"/>|<p>[ARM-A53 (High-Speed) 🟡](./rtl8822bs_arm_a53)<p>STA 🟢<p>AP 🟡|
 |SDIO|RTL8822 [C] S<p>PCBA EVM|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8822c.ko<p>rtw_8822cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822cs_arm_a35)<p>STA 🟢<p>AP 🟡|
-|SDIO|RTL8822 [C] S<p>PCBA EVM|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|<p>[ARM-A35 (High-Speed) 🟡](./rtl8822cs_arm_a53)<p>STA 🟢<p>AP 🟡|
+|SDIO|RTL8822 [C] S<p>PCBA EVM|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8821c.ko<p>rtw_8821cs.ko|<img src="./images/8822cs/rtl8822cs_pcba.png" width="200"/>|<p>[ARM-A53 (High-Speed) 🟡](./rtl8822cs_arm_a53)<p>STA 🟢<p>AP 🟡|
 
 ### RTW88 Revision - [c56536cfa522b42cfa73c2c4332000e6aa5bcf97](https://github.com/lwfinger/rtw88/tree/c56536cfa522b42cfa73c2c4332000e6aa5bcf97)
 
