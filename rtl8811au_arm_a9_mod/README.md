@@ -746,7 +746,7 @@ rsn_pairwise=CCMP TKIP
 wpa_pairwise=TKIP CCMP
 ```
 
-#### hostapd.conf
+#### udhcp.conf
 
 ```
 start 192.168.175.2
