@@ -28,7 +28,7 @@ https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
 > 
 > still introducing hard time to switch channels / frequencies.
 
-> i3: RTL8811AU USB Dongle
+> I3: RTL8811AU USB Dongle
 >
 > This dongle have trouble on connecting 5G/2G STA
 >
@@ -37,6 +37,10 @@ https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
 > poor IFA antenna design, no diplexer is used
 >
 > When module is used and cross-compare no issue is found.
+
+> I4: RTL8811CU Module
+>
+> STA 5G is stuck in authenticate time out.
 
 ## SDIO Devices Investigation on RTW88
 
