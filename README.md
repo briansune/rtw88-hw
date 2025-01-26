@@ -28,15 +28,15 @@ https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
 > 
 > still introducing hard time to switch channels / frequencies.
 
-> i3: During RTL8822BS debugging.
+> i3: RTL8811AU USB Dongle
 >
-> A puzzling behavior under modified vendor driver is found
+> This dongle have trouble on connecting 5G/2G STA
 >
-> iperf3 -s direct host AP shows a complete blocked the 2.4G band
+> According to quick hardware inspection, it is highly due to
 >
-> BT device such as speaker music stream is stop working.
+> poor IFA antenna design, no diplexer is used
 >
-> RTW88 does not introduce such issue.
+> When module is used and cross-compare no issue is found.
 
 ## SDIO Devices Investigation on RTW88
 
