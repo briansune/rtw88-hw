@@ -41,6 +41,10 @@ https://github.com/lwfinger/rtw88/issues/271#issuecomment-2566392845
 > I4: RTL8811CU Module
 >
 > STA 5G is stuck in authenticate time out.
+>
+> Possible factors are the internal EFUSE is missing and dBm value on 5G are all messed up.
+>
+> Cross-compared with vendor driver can connect to 5G poorly which indicates 5G channel is problematic.
 
 ## SDIO Devices Investigation on RTW88
 
