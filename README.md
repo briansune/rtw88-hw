@@ -133,7 +133,7 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 |||||||
 |PCIe|RTL8821 [C] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8821ce/rtl8821ce_m2card.JPG" width="200"/>|❓Card Detect Issue|
 |||||||
-|PCIe|RTL8822 [B] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8822be/rtl8822be_m2card.JPG" width="200"/>||
+|PCIe|RTL8822 [B] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8822b.ko<p>rtw_8822be.ko|<img src="./images/8822be/rtl8822be_m2card.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8822be_arm_a53)<p>STA 🟢<p>AP 🟢|
 |PCIe|RTL8822 [C] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8822ce/rtl8822ce_m2card.JPG" width="200"/>|❓Card Detect Issue|
 
 
