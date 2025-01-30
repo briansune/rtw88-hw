@@ -74,12 +74,12 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 |:---:|:---:|:---:|:---:|:---:|
 |A35 ARM|RTL8723DS|Low-Speed|🟡 AP Not Working|🟢|
 |A35 ARM|RTL8821CS|Low-Speed|🔴 Crash on WIFI connection "Unable to Use"|🟢|
-|A35 ARM|RTL8822BS|Low-Speed|⏳|❌ Support upto Kernel 5.4|
+|A35 ARM|RTL8822BS|Low-Speed|⏳|[6.1 Kernel Modified 🟢](https://github.com/briansune/dr1-rtl8822bs)|
 |A35 ARM|RTL8822CS|Low-Speed|🔴 Crash Message but no System Hang|🟢|
 ||||||
 |A35 ARM|RTL8723DS|High-Speed|🟡 AP Not Working|🟢|
 |A35 ARM|RTL8821CS|High-Speed|🟡 AP Not Working|🟢|
-|A35 ARM|RTL8822BS|High-Speed|🟡 AP Not Working|❌ Support upto Kernel 5.4|
+|A35 ARM|RTL8822BS|High-Speed|🟡 AP Not Working|[6.1 Kernel Modified 🟢](https://github.com/briansune/dr1-rtl8822bs)|
 |A35 ARM|RTL8822CS|High-Speed|🟡 AP Not Working|🟢|
 
 ## PCIe M.2 A+E aka NGFF
