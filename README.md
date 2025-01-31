@@ -160,14 +160,14 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 
 > I1: No STA 2.4G can be scan during testing.
 >
-> Unable to connect to 2.4G band due to STA issue.
+> Unable to connect to 2.4G band due to STA shows no WIFI channel.
 >
-> Hold patching is released.
+> This issue is related to EFUSE sanity (confirmed with other 4 boards on RTL8723DS).
 > 
 
 |Phy Interface|<p>Chip #<p>HW Type|DUT Kernel #|Driver Tree|HW Image|Status|
 |:---:|:---|:---|:---:|:---:|---:|
-|SDIO|RTL8723 [D] S<p>Custom HW|<p>5.4[ARM-A9]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_custom.JPG" width="200"/>|<p>ARM-A9 (High-Speed) 🔴<p>STA 🔴<p>AP 🔴|
-|SDIO|RTL8723 [D] S<p>Module HW|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_pcba.JPG" width="200"/>|<p>[ARM64-A35 (High-Speed) 🔴](./)<p>STA 🔴<p>AP 🔴|
-|SDIO|RTL8723 [D] S<p>Module HW|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_pcba_cus.JPG" width="200"/>|<p>[ARM64-A35 (High-Speed) 🔴](./)<p>STA 🔴<p>AP 🔴|
+|SDIO|RTL8723 [D] S<p>Custom HW|<p>5.4[ARM-A9]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_custom.JPG" width="200"/>|<p>ARM-A9 (High-Speed) 🟢<p>STA 🟡<p>AP 🔴|
+|SDIO|RTL8723 [D] S<p>Module HW|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_pcba.JPG" width="200"/>|<p>[ARM64-A35 (High-Speed) 🟢](./)<p>STA 🟡<p>AP 🔴|
+|SDIO|RTL8723 [D] S<p>Module HW|<p>6.1.111-rt42[ARM-A35]|<p>rtw_core.ko<p>rtw_sdio.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723ds.ko|<img src="./images/8723ds/rtl8723ds_pcba_cus.JPG" width="200"/>|<p>[ARM64-A35 (High-Speed) 🟢](./)<p>STA 🟡<p>AP 🔴|
 
