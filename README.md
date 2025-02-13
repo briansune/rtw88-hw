@@ -99,8 +99,8 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 
 |Testbench|Device|Speed Profile|Issue|
 |:---:|:---:|:---:|:---:|
-|A53 ARM64|RTL8723DE|x1 2.5G 128 Bytes|⏳|
-|A53 ARM64|RTL8723DE|x1 5.0G 256 Bytes|⏳|
+|A53 ARM64|RTL8723DE|x1 2.5G 128 Bytes|🟢|
+|A53 ARM64|RTL8723DE|x1 5.0G 256 Bytes|🟢|
 |||||
 |A53 ARM64|RTL8821CE|x1 2.5G 128 Bytes|⏳|
 |A53 ARM64|RTL8821CE|x1 5.0G 256 Bytes|⏳|
@@ -141,7 +141,7 @@ Remarks ★: Tested Version: [58638cb909377bed524ac9aad0ce7cefc1a037da](https://
 
 |Phy Interface|<p>Chip #<p>HW Type|DUT Kernel #|Driver Tree|HW Image|Status|
 |:---:|:---|:---|:---:|:---:|---:|
-|PCIe|RTL8723 [D] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8723de/rtl8723de_m2card.JPG" width="200"/>|⏳|
+|PCIe|RTL8723 [D] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723de.ko|<img src="./images/8723de/rtl8723de_m2card.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8723de_arm_a53)<p>STA 🟢<p>AP 🟢|
 |||||||
 |PCIe|RTL8821 [C] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8821ce/rtl8821ce_m2card.JPG" width="200"/>|⏳|
 |||||||
