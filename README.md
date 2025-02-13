@@ -102,14 +102,14 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 |A53 ARM64|RTL8723DE|x1 2.5G 128 Bytes|🟢|
 |A53 ARM64|RTL8723DE|x1 5.0G 256 Bytes|🟢|
 |||||
-|A53 ARM64|RTL8821CE|x1 2.5G 128 Bytes|⏳|
-|A53 ARM64|RTL8821CE|x1 5.0G 256 Bytes|⏳|
+|A53 ARM64|RTL8821CE|x1 2.5G 128 Bytes|🟢|
+|A53 ARM64|RTL8821CE|x1 5.0G 256 Bytes|🟢|
 |||||
 |A53 ARM64|RTL8822BE|x1 2.5G 128 Bytes|🟢|
 |A53 ARM64|RTL8822BE|x1 5.0G 256 Bytes|🟢|
 |||||
-|A53 ARM64|RTL8822CE|x1 2.5G 128 Bytes|⏳|
-|A53 ARM64|RTL8822CE|x1 5.0G 256 Bytes|⏳|
+|A53 ARM64|RTL8822CE|x1 2.5G 128 Bytes|🟢|
+|A53 ARM64|RTL8822CE|x1 5.0G 256 Bytes|🟢|
 
 ## Fully RTW88 Driver Support Devices Test Report Table
 
@@ -141,13 +141,16 @@ Remarks ★: Tested Version: [58638cb909377bed524ac9aad0ce7cefc1a037da](https://
 
 |Phy Interface|<p>Chip #<p>HW Type|DUT Kernel #|Driver Tree|HW Image|Status|
 |:---:|:---|:---|:---:|:---:|---:|
-|PCIe|RTL8723 [D] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723de.ko|<img src="./images/8723de/rtl8723de_m2card.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8723de_arm_a53)<p>STA 🟢<p>AP 🟢|
+|PCIe|RTL8723 [D] E<p>NGFF Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723de.ko|<img src="./images/8723de/rtl8723de_m2card.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8723de_arm_a53)<p>STA 🟢<p>AP 🟢|
+|PCIe|RTL8723 [D] E<p>NGFF Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723de.ko|<img src="./images/8723de/rtl8723de_m2card_n2.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8723de_arm_a53_2)<p>STA 🟢<p>AP 🟢|
 |||||||
-|PCIe|RTL8821 [C] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8821ce/rtl8821ce_m2card.JPG" width="200"/>|⏳|
+|PCIe|RTL8821 [C] E<p>NGFF Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8821c.ko<p>rtw_8821ce.ko|<img src="./images/8821ce/rtl8821ce_m2card.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8821ce_arm_a53)<p>STA 🟢<p>AP 🟢|
+|PCIe|RTL8821 [C] E<p>mini-PCIe Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8821c.ko<p>rtw_8821ce.ko|<img src="./images/8821ce/rtl8821ce_mpcie.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8821ce_arm_a53_2)<p>STA 🟢<p>AP 🟢|
 |||||||
-|PCIe|RTL8822 [B] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8822b.ko<p>rtw_8822be.ko|<img src="./images/8822be/rtl8822be_m2card.JPG" width="200"/>|<p>★ [ARM-A53 🟢](./rtl8822be_arm_a53)<p>STA 🟢<p>AP 🟢|
+|PCIe|RTL8822 [B] E<p>NGFF Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8822b.ko<p>rtw_8822be.ko|<img src="./images/8822be/rtl8822be_m2card.JPG" width="200"/>|<p>★ [ARM-A53 🟢](./rtl8822be_arm_a53)<p>STA 🟢<p>AP 🟢|
 |||||||
-|PCIe|RTL8822 [C] E<p>M.2 Card|<p>5.4[ARM-A53]|<p>rtw_core.ko|<img src="./images/8822ce/rtl8822ce_m2card.JPG" width="200"/>|⏳|
+|PCIe|RTL8822 [C] E<p>NGFF Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8822c.ko<p>rtw_8822ce.ko|<img src="./images/8822ce/rtl8822ce_m2card.JPG" width="200"/>|[ARM-A53 🟢](./rtl8822ce_arm_a53)<p>STA 🟢<p>AP 🟢|
+|PCIe|RTL8822 [C] E<p>mini-PCIe Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8822c.ko<p>rtw_8822ce.ko|<img src="./images/8822ce/rtl8822ce_m2card.JPG" width="200"/>|[ARM-A53 🟢](./rtl8822ce_arm_a53_2)<p>STA 🟢<p>AP 🟢|
 
 
 ### RTW88 Revision - [58638cb909377bed524ac9aad0ce7cefc1a037da](https://github.com/lwfinger/rtw88/tree/386382ace137f5209e8e83a4cf2e044bf52e8b38)
