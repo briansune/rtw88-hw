@@ -150,7 +150,7 @@ Remarks ★: Tested Version: [58638cb909377bed524ac9aad0ce7cefc1a037da](https://
 |PCIe|RTL8822 [B] E<p>NGFF Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8822b.ko<p>rtw_8822be.ko|<img src="./images/8822be/rtl8822be_m2card.JPG" width="200"/>|<p>★ [ARM-A53 🟢](./rtl8822be_arm_a53)<p>STA 🟢<p>AP 🟢|
 |||||||
 |PCIe|RTL8822 [C] E<p>NGFF Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8822c.ko<p>rtw_8822ce.ko|<img src="./images/8822ce/rtl8822ce_m2card.JPG" width="200"/>|[ARM-A53 🟢](./rtl8822ce_arm_a53)<p>STA 🟢<p>AP 🟢|
-|PCIe|RTL8822 [C] E<p>mini-PCIe Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8822c.ko<p>rtw_8822ce.ko|<img src="./images/8822ce/rtl8822ce_m2card.JPG" width="200"/>|[ARM-A53 🟢](./rtl8822ce_arm_a53_2)<p>STA 🟢<p>AP 🟢|
+|PCIe|RTL8822 [C] E<p>mini-PCIe Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8822c.ko<p>rtw_8822ce.ko|<img src="./images/8822ce/rtl8822ce_mpcie.JPG" width="200"/>|[ARM-A53 🟢](./rtl8822ce_arm_a53_2)<p>STA 🟢<p>AP 🟢|
 
 
 ### RTW88 Revision - [58638cb909377bed524ac9aad0ce7cefc1a037da](https://github.com/lwfinger/rtw88/tree/386382ace137f5209e8e83a4cf2e044bf52e8b38)
