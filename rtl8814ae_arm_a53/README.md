@@ -186,6 +186,18 @@ rtw_core              208896  2 rtw_8814a,rtw_pci
 [   52.273976] rtw_8814ae 0000:01:00.0: failed to setup chip information
 [   52.293025] rtw_8814ae: probe of 0000:01:00.0 failed with error -95
 ```
+### Additional Windows 11 OS debug
+
+On Windows 11 with v2023.79.0619.2018 for RTL8814AE and Windows 10 64bit
+
+![Image](https://github.com/user-attachments/assets/3f5c3fb0-3df4-419c-8a90-8f3313912c0e)
+
+![Image](https://github.com/user-attachments/assets/ade0d92a-464d-4b51-8115-f51ac7b6706c)
+
+![image](https://github.com/user-attachments/assets/3366ee4e-e86f-4d30-8e12-b5e0c449a851)
+
+![image](https://github.com/user-attachments/assets/f3c16064-07ac-46a5-ba55-0799a68175df)
+
 
 ### iw list
 
