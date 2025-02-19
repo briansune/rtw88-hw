@@ -108,6 +108,8 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 |A53 ARM64|RTL8723DE|x1 2.5G 128 Bytes|🟢|
 |A53 ARM64|RTL8723DE|x1 5.0G 256 Bytes|🟢|
 |||||
+|A53 ARM64|RTL8811AE|x1 5.0G 256 Bytes|🟢|
+|||||
 |A53 ARM64|RTL8821CE|x1 2.5G 128 Bytes|🟢|
 |A53 ARM64|RTL8821CE|x1 5.0G 256 Bytes|🟢|
 |||||
@@ -145,7 +147,7 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 
 Remarks ★: Tested Version: [58638cb909377bed524ac9aad0ce7cefc1a037da](https://github.com/lwfinger/rtw88/tree/386382ace137f5209e8e83a4cf2e044bf52e8b38) 
 
-Remarks ✦: Tested Version: [fdbc4b3bd6c87b3e16b963ba00c824bf7316e0c0](https://github.com/lwfinger/rtw88/tree/fdbc4b3bd6c87b3e16b963ba00c824bf7316e0c0) 
+Remarks ✦: Tested Version: [95baebeceaedad549b7eef06b524395d73ead66a](https://github.com/lwfinger/rtw88/tree/95baebeceaedad549b7eef06b524395d73ead66a) 
 
 |Phy Interface|<p>Chip #<p>HW Type|DUT Kernel #|Driver Tree|HW Image|Status|
 |:---:|:---|:---|:---:|:---:|---:|
