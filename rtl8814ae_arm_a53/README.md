@@ -36,17 +36,16 @@ Flags:               fp asimd aes pmull sha1 sha2 crc32 cpuid
 ```
 01:00.0 Network controller: Realtek Semiconductor Co., Ltd. RTL8813AE 802.11ac PCIe Wireless Network Adapter (rev 01)
 	Subsystem: Realtek Semiconductor Co., Ltd. RTL8813AE 802.11ac PCIe Wireless Network Adapter
-	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
+	Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
 	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
-	Latency: 0
-	Interrupt: pin A routed to IRQ 50
+	Interrupt: pin A routed to IRQ 255
 	Region 0: I/O ports at <unassigned> [disabled]
-	Region 2: Memory at e0000000 (64-bit, non-prefetchable) [size=64K]
+	Region 2: Memory at e0000000 (64-bit, non-prefetchable) [disabled] [size=64K]
 	Capabilities: [40] Power Management version 3
 		Flags: PMEClk- DSI- D1+ D2+ AuxCurrent=375mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
 		Status: D0 NoSoftRst+ PME-Enable- DSel=0 DScale=0 PME-
-	Capabilities: [50] MSI: Enable+ Count=1/1 Maskable- 64bit+
-		Address: 00000000fd480000  Data: 0000
+	Capabilities: [50] MSI: Enable- Count=1/1 Maskable- 64bit+
+		Address: 0000000000000000  Data: 0000
 	Capabilities: [70] Express (v2) Endpoint, MSI 00
 		DevCap:	MaxPayload 4096 bytes, PhantFunc 1, Latency L0s <256ns, L1 <1us
 			ExtTag- AttnBtn- AttnInd- PwrInd- RBE+ FLReset- SlotPowerLimit 0.000W
@@ -70,7 +69,7 @@ Flags:               fp asimd aes pmull sha1 sha2 crc32 cpuid
 		UESta:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF- MalfTLP- ECRC- UnsupReq- ACSViol-
 		UEMsk:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF- MalfTLP- ECRC- UnsupReq- ACSViol-
 		UESvrt:	DLP+ SDES+ TLP- FCP+ CmpltTO- CmpltAbrt- UnxCmplt- RxOF+ MalfTLP+ ECRC- UnsupReq- ACSViol-
-		CESta:	RxErr+ BadTLP- BadDLLP- Rollover- Timeout- NonFatalErr-
+		CESta:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- NonFatalErr-
 		CEMsk:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- NonFatalErr+
 		AERCap:	First Error Pointer: 00, GenCap+ CGenEn- ChkCap+ ChkEn-
 	Capabilities: [148 v1] Device Serial Number 00-e0-4c-ff-fe-88-13-01
@@ -83,12 +82,7 @@ Flags:               fp asimd aes pmull sha1 sha2 crc32 cpuid
 		L1SubCtl1: PCI-PM_L1.2- PCI-PM_L1.1- ASPM_L1.2- ASPM_L1.1-
 			   T_CommonMode=0us LTR1.2_Threshold=0ns
 		L1SubCtl2: T_PwrOn=10us
-	Kernel driver in use: rtw_8814ae
 
-[  107.585072] rtw_core: loading out-of-tree module taints kernel.
-[  107.776671] rtw_8814ae 0000:01:00.0: enabling device (0000 -> 0002)
-[  107.795589] rtw_8814ae 0000:01:00.0: Firmware version 33.6.0, H2C version 6
-[  107.804839] rtw_8814ae 0000:01:00.0: hw cap: hci=0x00, bw=0x07, ptcl=0x03, ant_num=0, nss=3
 ```
 
 ### Driver Load
@@ -153,48 +147,10 @@ rtw_core              208896  2 rtw_8814a,rtw_pci
 		L1SubCtl2: T_PwrOn=10us
 	Kernel driver in use: rtw_8814ae
 
-[  107.585072] rtw_core: loading out-of-tree module taints kernel.
-[  107.776671] rtw_8814ae 0000:01:00.0: enabling device (0000 -> 0002)
-[  107.795589] rtw_8814ae 0000:01:00.0: Firmware version 33.6.0, H2C version 6
-[  107.804839] rtw_8814ae 0000:01:00.0: hw cap: hci=0x00, bw=0x07, ptcl=0x03, ant_num=0, nss=3
-
-
-[  107.585072] rtw_core: loading out-of-tree module taints kernel.
-[  107.776671] rtw_8814ae 0000:01:00.0: enabling device (0000 -> 0002)
-[  107.795589] rtw_8814ae 0000:01:00.0: Firmware version 33.6.0, H2C version 6
-[  107.804724] 00000000: 29 81 01 94 0d 0c 18 00 00 00 00 08 08 01 02 00  )...............
-[  107.804729] 00000010: 1f 1f 1f 20 20 20 20 20 20 21 21 f3 ee ee ee ee  ...      !!.....
-[  107.804733] 00000020: ee ee 24 24 24 24 24 24 24 24 24 23 23 23 23 23  ..$$$$$$$$$#####
-[  107.804736] 00000030: f1 ee ee ee ee ee 20 ee ee ee 20 20 20 20 20 20  ...... ...
-[  107.804740] 00000040: 21 21 21 21 21 f2 ee ee ee ee ee ee 23 23 23 23  !!!!!.......####
-[  107.804743] 00000050: 24 24 24 24 24 23 23 23 23 23 f1 ee ee ee ee ff  $$$$$#####......
-[  107.804747] 00000060: 20 ee ee ee 1f 1f 1f 1e 1e 1e 20 20 1f 1e 1e f3   .........  ....
-[  107.804750] 00000070: ee ee ee ee ee ee 22 22 22 22 23 23 23 23 23 23  ......""""######
-[  107.804754] 00000080: 23 23 23 23 f1 ee ee ee ee ee 20 ee ee ee 1f 1f  ####...... .....
-[  107.804757] 00000090: 1f 1f 1f 1f 20 20 1f 1f 1f f4 ee ee ee ee ee ee  ....  ..........
-[  107.804760] 000000a0: 23 23 23 23 24 24 24 24 24 22 22 22 22 22 f1 ee  ####$$$$$"""""..
-[  107.804764] 000000b0: ee ee ee ee 20 ee ee ee 7f 1f ff 00 ff ff ff ff  .... ...........
-[  107.804768] 000000c0: ff 01 00 00 00 00 00 00 00 ff 00 ff ff ff ff ff  ................
-[  107.804771] 000000d0: e8 4e 06 78 86 6b ec 10 13 88 ec 10 13 88 c3 ff  .N.x.k..........
-[  107.804774] 000000e0: 8d 80 ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804778] 000000f0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804781] 00000100: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804785] 00000110: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804788] 00000120: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804791] 00000130: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804795] 00000140: 67 4f ff ff ff ff ff ff ff ff ff ff ff ff ff ff  gO..............
-[  107.804798] 00000150: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804801] 00000160: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804805] 00000170: ff ff ff ff ff ff ff ff ff 88 f5 30 ff ff ff ff  ...........0....
-[  107.804808] 00000180: ff ff 4f 16 ff ff ff ff ff ff ff ff ff ff ff ff  ..O.............
-[  107.804812] 00000190: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804815] 000001a0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804818] 000001b0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804822] 000001c0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804825] 000001d0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804829] 000001e0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804832] 000001f0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff  ................
-[  107.804839] rtw_8814ae 0000:01:00.0: hw cap: hci=0x00, bw=0x07, ptcl=0x03, ant_num=0, nss=3
+[  147.824099] rtw_core: loading out-of-tree module taints kernel.
+[  148.015878] rtw_8814ae 0000:01:00.0: enabling device (0000 -> 0002)
+[  148.042910] rtw_8814ae 0000:01:00.0: Firmware version 33.6.0, H2C version 6
+[  148.052203] rtw_8814ae 0000:01:00.0: hw cap: hci=0x00, bw=0x07, ptcl=0x03, ant_num=0, nss=3
 ```
 
 ### iw list
@@ -431,6 +387,543 @@ Wiphy phy0
 
 </details>
 
+### Network Manager - Band 2.4
+
+```
+wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.199  netmask 255.255.255.0  broadcast 192.168.1.255
+        RX packets 14  bytes 2104 (2.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 26  bytes 3840 (3.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+### iwconfig 2.4
+
+```
+wlan0     IEEE 802.11  ESSID:""  
+          Mode:Managed  Frequency:2.427 GHz  Access Point: 
+          Bit Rate=104 Mb/s   Tx-Power=30 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:on
+          Link Quality=66/70  Signal level=-44 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+```
+
+### Network Speed Test via Ookla - Band 2.4
+
+```
+Retrieving speedtest.net configuration...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Testing download speed................................................................................
+Download: 72.61 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 3.70 Mbit/s
+```
+
+### Network Ping Tests - Band 2.4
+
+#### DNS-Ping
+
+```
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=59 time=5.67 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=59 time=5.90 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=59 time=5.32 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=59 time=5.57 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=59 time=5.39 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=59 time=8.01 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=59 time=11.9 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=59 time=6.46 ms
+64 bytes from 8.8.8.8: icmp_seq=9 ttl=59 time=5.44 ms
+64 bytes from 8.8.8.8: icmp_seq=10 ttl=59 time=5.36 ms
+64 bytes from 8.8.8.8: icmp_seq=11 ttl=59 time=5.42 ms
+64 bytes from 8.8.8.8: icmp_seq=12 ttl=59 time=33.6 ms
+64 bytes from 8.8.8.8: icmp_seq=13 ttl=59 time=5.41 ms
+64 bytes from 8.8.8.8: icmp_seq=14 ttl=59 time=8.89 ms
+64 bytes from 8.8.8.8: icmp_seq=15 ttl=59 time=5.23 ms
+64 bytes from 8.8.8.8: icmp_seq=16 ttl=59 time=5.47 ms
+64 bytes from 8.8.8.8: icmp_seq=17 ttl=59 time=5.43 ms
+64 bytes from 8.8.8.8: icmp_seq=18 ttl=59 time=5.40 ms
+64 bytes from 8.8.8.8: icmp_seq=19 ttl=59 time=5.43 ms
+64 bytes from 8.8.8.8: icmp_seq=20 ttl=59 time=6.63 ms
+
+--- 8.8.8.8 ping statistics ---
+20 packets transmitted, 20 received, 0% packet loss, time 19024ms
+rtt min/avg/max/mdev = 5.232/7.606/33.658/6.191 ms
+```
+
+#### Self-Ping 
+
+```
+PING 192.168.1.199 (192.168.1.199) 10000(10028) bytes of data.
+10008 bytes from 192.168.1.199: icmp_seq=1 ttl=64 time=0.104 ms
+10008 bytes from 192.168.1.199: icmp_seq=2 ttl=64 time=0.062 ms
+10008 bytes from 192.168.1.199: icmp_seq=3 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=4 ttl=64 time=0.061 ms
+10008 bytes from 192.168.1.199: icmp_seq=5 ttl=64 time=0.064 ms
+10008 bytes from 192.168.1.199: icmp_seq=6 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=7 ttl=64 time=0.080 ms
+10008 bytes from 192.168.1.199: icmp_seq=8 ttl=64 time=0.061 ms
+10008 bytes from 192.168.1.199: icmp_seq=9 ttl=64 time=0.061 ms
+10008 bytes from 192.168.1.199: icmp_seq=10 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=11 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=12 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=13 ttl=64 time=0.073 ms
+10008 bytes from 192.168.1.199: icmp_seq=14 ttl=64 time=0.061 ms
+10008 bytes from 192.168.1.199: icmp_seq=15 ttl=64 time=0.062 ms
+10008 bytes from 192.168.1.199: icmp_seq=16 ttl=64 time=0.059 ms
+10008 bytes from 192.168.1.199: icmp_seq=17 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=18 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=19 ttl=64 time=0.062 ms
+10008 bytes from 192.168.1.199: icmp_seq=20 ttl=64 time=0.059 ms
+
+--- 192.168.1.199 ping statistics ---
+20 packets transmitted, 20 received, 0% packet loss, time 19441ms
+rtt min/avg/max/mdev = 0.059/0.064/0.104/0.012 ms
+```
+
+### Server & Client Test via iperf3 (PC-Router-DUT)
+
+<details>
+
+<summary>iperf3</summary>
+
+```
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 192.168.1.252, port 53638
+[  5] local 192.168.1.199 port 5201 connected to 192.168.1.252 port 53639
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  5]   0.00-1.00   sec  8.11 MBytes  68.0 Mbits/sec    0    513 KBytes       
+[  5]   1.00-2.00   sec  4.29 MBytes  36.0 Mbits/sec    0    513 KBytes       
+[  5]   2.00-3.00   sec  4.17 MBytes  34.9 Mbits/sec    0    513 KBytes       
+[  5]   3.00-4.00   sec  6.19 MBytes  51.9 Mbits/sec    0    513 KBytes       
+[  5]   4.00-5.00   sec  4.17 MBytes  34.9 Mbits/sec    0    513 KBytes       
+[  5]   5.00-6.00   sec  4.35 MBytes  36.5 Mbits/sec    0    513 KBytes       
+[  5]   6.00-7.00   sec  2.08 MBytes  17.5 Mbits/sec    0    522 KBytes       
+[  5]   7.00-8.00   sec  4.17 MBytes  34.9 Mbits/sec    0    522 KBytes       
+[  5]   8.00-9.00   sec  4.23 MBytes  35.5 Mbits/sec    0    522 KBytes       
+[  5]   9.00-10.00  sec  3.25 MBytes  27.2 Mbits/sec    0    522 KBytes       
+[  5]  10.00-11.00  sec  2.08 MBytes  17.5 Mbits/sec    0    522 KBytes       
+[  5]  11.00-12.00  sec  2.08 MBytes  17.5 Mbits/sec    0    522 KBytes       
+[  5]  12.00-13.00  sec  1.04 MBytes  8.74 Mbits/sec    0    522 KBytes       
+[  5]  13.00-14.00  sec  1.04 MBytes  8.73 Mbits/sec    0    522 KBytes       
+[  5]  14.00-15.00  sec  3.19 MBytes  26.7 Mbits/sec    0    522 KBytes       
+[  5]  15.00-16.00  sec  2.08 MBytes  17.5 Mbits/sec    0    522 KBytes       
+[  5]  16.00-17.00  sec  2.08 MBytes  17.5 Mbits/sec    0    522 KBytes       
+[  5]  17.00-18.00  sec  2.14 MBytes  18.0 Mbits/sec    0    522 KBytes       
+[  5]  18.00-19.00  sec  5.27 MBytes  44.2 Mbits/sec    0    522 KBytes       
+[  5]  19.00-20.00  sec  4.17 MBytes  34.9 Mbits/sec    0    522 KBytes       
+[  5]  20.00-21.00  sec  4.23 MBytes  35.5 Mbits/sec    0    522 KBytes       
+[  5]  21.00-22.00  sec  1.04 MBytes  8.73 Mbits/sec    0    522 KBytes       
+[  5]  22.00-23.00  sec  1.04 MBytes  8.73 Mbits/sec    0    522 KBytes       
+[  5]  23.00-24.00  sec  1.04 MBytes  8.74 Mbits/sec    0    522 KBytes       
+[  5]  24.00-25.00  sec  2.08 MBytes  17.5 Mbits/sec    0    522 KBytes       
+[  5]  25.00-26.00  sec  4.23 MBytes  35.5 Mbits/sec    0    522 KBytes       
+[  5]  26.00-27.00  sec  4.23 MBytes  35.5 Mbits/sec    0    522 KBytes       
+[  5]  27.00-28.00  sec  5.33 MBytes  44.7 Mbits/sec    0    522 KBytes       
+[  5]  28.00-29.00  sec  3.12 MBytes  26.2 Mbits/sec    0    522 KBytes       
+[  5]  29.00-30.00  sec  2.08 MBytes  17.5 Mbits/sec    0    522 KBytes       
+[  5]  30.00-30.05  sec  1.04 MBytes   178 Mbits/sec    0    522 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  5]   0.00-30.05  sec  99.6 MBytes  27.8 Mbits/sec    0             sender
+[  5]   0.00-30.05  sec  0.00 Bytes  0.00 bits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+iperf3: interrupt - the server has terminated
+[  147.824099] rtw_core: loading out-of-tree module taints kernel.
+[  148.015878] rtw_8814ae 0000:01:00.0: enabling device (0000 -> 0002)
+[  148.042910] rtw_8814ae 0000:01:00.0: Firmware version 33.6.0, H2C version 6
+[  148.052203] rtw_8814ae 0000:01:00.0: hw cap: hci=0x00, bw=0x07, ptcl=0x03, ant_num=0, nss=3
+```
+
+</details>
+
+### Network Manager - Band 5G
+
+```
+wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.199  netmask 255.255.255.0  broadcast 192.168.1.255
+        RX packets 76798  bytes 96895965 (96.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 108397  bytes 116527449 (116.5 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+### iwconfig 5G
+
+```
+wlan0     IEEE 802.11  ESSID:""  
+          Mode:Managed  Frequency:5.2 GHz  Access Point: 
+          Bit Rate=351 Mb/s   Tx-Power=23 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:on
+          Link Quality=40/70  Signal level=-70 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+```
+
+### Network Speed Test via Ookla - Band 5G
+
+```
+Retrieving speedtest.net configuration...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Testing download speed................................................................................
+Download: 51.61 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 3.84 Mbit/s
+```
+
+### Network Ping Tests - Band 5G
+
+#### DNS-Ping
+
+```
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=59 time=28.6 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=59 time=79.6 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=59 time=21.5 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=59 time=7.78 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=59 time=4.21 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=59 time=4.31 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=59 time=10.5 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=59 time=19.7 ms
+64 bytes from 8.8.8.8: icmp_seq=9 ttl=59 time=31.9 ms
+64 bytes from 8.8.8.8: icmp_seq=10 ttl=59 time=55.1 ms
+64 bytes from 8.8.8.8: icmp_seq=11 ttl=59 time=40.8 ms
+64 bytes from 8.8.8.8: icmp_seq=12 ttl=59 time=17.9 ms
+64 bytes from 8.8.8.8: icmp_seq=13 ttl=59 time=10.3 ms
+64 bytes from 8.8.8.8: icmp_seq=14 ttl=59 time=4.17 ms
+64 bytes from 8.8.8.8: icmp_seq=15 ttl=59 time=4.67 ms
+64 bytes from 8.8.8.8: icmp_seq=16 ttl=59 time=4.28 ms
+64 bytes from 8.8.8.8: icmp_seq=17 ttl=59 time=84.5 ms
+64 bytes from 8.8.8.8: icmp_seq=18 ttl=59 time=10.8 ms
+64 bytes from 8.8.8.8: icmp_seq=19 ttl=59 time=24.1 ms
+64 bytes from 8.8.8.8: icmp_seq=20 ttl=59 time=115 ms
+
+--- 8.8.8.8 ping statistics ---
+20 packets transmitted, 20 received, 0% packet loss, time 19029ms
+rtt min/avg/max/mdev = 4.174/29.062/115.663/30.658 ms
+```
+
+#### Self-Ping 
+
+```
+PING 192.168.1.199 (192.168.1.199) 10000(10028) bytes of data.
+10008 bytes from 192.168.1.199: icmp_seq=1 ttl=64 time=0.103 ms
+10008 bytes from 192.168.1.199: icmp_seq=2 ttl=64 time=0.081 ms
+10008 bytes from 192.168.1.199: icmp_seq=3 ttl=64 time=0.068 ms
+10008 bytes from 192.168.1.199: icmp_seq=4 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=5 ttl=64 time=0.061 ms
+10008 bytes from 192.168.1.199: icmp_seq=6 ttl=64 time=0.061 ms
+10008 bytes from 192.168.1.199: icmp_seq=7 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=8 ttl=64 time=0.074 ms
+10008 bytes from 192.168.1.199: icmp_seq=9 ttl=64 time=0.065 ms
+10008 bytes from 192.168.1.199: icmp_seq=10 ttl=64 time=0.059 ms
+10008 bytes from 192.168.1.199: icmp_seq=11 ttl=64 time=0.061 ms
+10008 bytes from 192.168.1.199: icmp_seq=12 ttl=64 time=0.061 ms
+10008 bytes from 192.168.1.199: icmp_seq=13 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=14 ttl=64 time=0.085 ms
+10008 bytes from 192.168.1.199: icmp_seq=15 ttl=64 time=0.065 ms
+10008 bytes from 192.168.1.199: icmp_seq=16 ttl=64 time=0.062 ms
+10008 bytes from 192.168.1.199: icmp_seq=17 ttl=64 time=0.060 ms
+10008 bytes from 192.168.1.199: icmp_seq=18 ttl=64 time=0.061 ms
+10008 bytes from 192.168.1.199: icmp_seq=19 ttl=64 time=0.062 ms
+10008 bytes from 192.168.1.199: icmp_seq=20 ttl=64 time=0.079 ms
+
+--- 192.168.1.199 ping statistics ---
+20 packets transmitted, 20 received, 0% packet loss, time 19460ms
+rtt min/avg/max/mdev = 0.059/0.067/0.103/0.013 ms
+```
+
+### Server & Client Test via iperf3 (PC-Router-DUT)
+
+<details>
+
+<summary>iperf3</summary>
+
+```
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 192.168.1.252, port 53674
+[  5] local 192.168.1.199 port 5201 connected to 192.168.1.252 port 53675
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  5]   0.00-1.00   sec  9.66 MBytes  81.0 Mbits/sec    0    480 KBytes       
+[  5]   1.00-2.00   sec  9.95 MBytes  83.5 Mbits/sec    0    516 KBytes       
+[  5]   2.00-3.00   sec  10.8 MBytes  90.4 Mbits/sec    0    633 KBytes       
+[  5]   3.00-4.00   sec  7.49 MBytes  62.8 Mbits/sec    0    682 KBytes       
+[  5]   4.00-5.00   sec  2.50 MBytes  21.0 Mbits/sec    0    716 KBytes       
+[  5]   5.00-6.00   sec  2.50 MBytes  21.0 Mbits/sec    0    716 KBytes       
+[  5]   6.00-7.00   sec  3.75 MBytes  31.5 Mbits/sec    0    787 KBytes       
+[  5]   7.00-8.00   sec  7.50 MBytes  62.9 Mbits/sec    0    831 KBytes       
+[  5]   8.00-9.00   sec  8.75 MBytes  73.4 Mbits/sec    0    831 KBytes       
+[  5]   9.00-10.00  sec  8.75 MBytes  73.4 Mbits/sec    0    831 KBytes       
+[  5]  10.00-11.00  sec  11.2 MBytes  94.4 Mbits/sec    0    831 KBytes       
+[  5]  11.00-12.00  sec  15.0 MBytes   126 Mbits/sec    0   1.09 MBytes       
+[  5]  12.00-13.00  sec  17.5 MBytes   147 Mbits/sec    0   1.09 MBytes       
+[  5]  13.00-14.00  sec  13.8 MBytes   115 Mbits/sec    0   1.09 MBytes       
+[  5]  14.00-15.00  sec  11.2 MBytes  94.4 Mbits/sec    0   1.09 MBytes       
+[  5]  15.00-16.00  sec  13.8 MBytes   115 Mbits/sec    0   1.09 MBytes       
+[  5]  16.00-17.00  sec  12.5 MBytes   105 Mbits/sec    0   1.09 MBytes       
+[  5]  17.00-18.00  sec  11.2 MBytes  94.4 Mbits/sec    0   1.09 MBytes       
+[  5]  18.00-19.00  sec  12.5 MBytes   105 Mbits/sec    0   1.09 MBytes       
+[  5]  19.00-20.00  sec  12.5 MBytes   105 Mbits/sec    0   1.09 MBytes       
+[  5]  20.00-21.00  sec  7.50 MBytes  62.9 Mbits/sec    0   1.09 MBytes       
+[  5]  21.00-22.00  sec  11.2 MBytes  94.4 Mbits/sec    0   1.09 MBytes       
+[  5]  22.00-23.00  sec  12.5 MBytes   105 Mbits/sec    0   1.09 MBytes       
+[  5]  23.00-24.00  sec  12.5 MBytes   105 Mbits/sec    0   1.59 MBytes       
+[  5]  24.00-25.00  sec  13.8 MBytes   115 Mbits/sec    0   2.36 MBytes       
+[  5]  25.00-26.00  sec  12.5 MBytes   105 Mbits/sec    0   2.64 MBytes       
+[  5]  26.00-27.00  sec  10.0 MBytes  83.9 Mbits/sec    0   2.64 MBytes       
+[  5]  27.00-28.00  sec  11.2 MBytes  94.4 Mbits/sec    0   2.64 MBytes       
+[  5]  28.00-29.00  sec  12.5 MBytes   105 Mbits/sec    0   2.64 MBytes       
+[  5]  29.00-30.00  sec  13.8 MBytes   115 Mbits/sec    0   2.64 MBytes       
+[  5]  30.00-30.10  sec  1.25 MBytes   102 Mbits/sec    0   2.64 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  5]   0.00-30.10  sec   322 MBytes  89.6 Mbits/sec    0             sender
+[  5]   0.00-30.10  sec  0.00 Bytes  0.00 bits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+iperf3: interrupt - the server has terminated
+[  147.824099] rtw_core: loading out-of-tree module taints kernel.
+[  148.015878] rtw_8814ae 0000:01:00.0: enabling device (0000 -> 0002)
+[  148.042910] rtw_8814ae 0000:01:00.0: Firmware version 33.6.0, H2C version 6
+[  148.052203] rtw_8814ae 0000:01:00.0: hw cap: hci=0x00, bw=0x07, ptcl=0x03, ant_num=0, nss=3
+```
+
+</details>
+
+### AP 2.4G Test
+
+#### hostapd.conf
+
+Setup the configuration at /etc/hostapd/hostapd.conf
+
+```
+interface=wlan0
+driver=nl80211
+ieee80211n=1
+hw_mode=g
+channel=6
+ssid=AP-TEST
+wpa=2
+wpa_passphrase=12345678
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP TKIP
+wpa_pairwise=TKIP CCMP
+```
+
+#### udhcpd.conf
+
+```
+start 192.168.175.2
+end 192.168.175.254
+interface wlan0
+max_leases 234
+opt router 192.168.175.1
+```
+
+#### Start AP Test
+
+```
+sudo hostapd /etc/hostapd/hostapd.conf -B
+Using interface wlan0 with hwaddr and ssid "AP-NAME"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED
+```
+
+#### Server & Client Test via iperf3 (PC-DUT)
+
+<details>
+
+<summary>iperf3</summary>
+
+```
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 192.168.175.86, port 53707
+[  5] local 192.168.175.1 port 5201 connected to 192.168.175.86 port 53708
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  5]   0.00-1.00   sec  2.25 MBytes  18.9 Mbits/sec    5    128 KBytes       
+[  5]   1.00-2.00   sec  1.68 MBytes  14.1 Mbits/sec    2    128 KBytes       
+[  5]   2.00-3.00   sec  4.10 MBytes  34.4 Mbits/sec    4    128 KBytes       
+[  5]   3.00-4.00   sec  5.12 MBytes  42.9 Mbits/sec    3    128 KBytes       
+[  5]   4.00-5.00   sec  7.69 MBytes  64.5 Mbits/sec    2    128 KBytes       
+[  5]   5.00-6.00   sec  8.52 MBytes  71.4 Mbits/sec    0    128 KBytes       
+[  5]   6.00-7.00   sec  8.09 MBytes  67.8 Mbits/sec    0    128 KBytes       
+[  5]   7.00-8.00   sec  7.96 MBytes  66.8 Mbits/sec    0    128 KBytes       
+[  5]   8.00-9.00   sec  8.27 MBytes  69.4 Mbits/sec    0    128 KBytes       
+[  5]   9.00-10.00  sec  6.16 MBytes  51.6 Mbits/sec    0    128 KBytes       
+[  5]  10.00-11.00  sec  5.79 MBytes  48.6 Mbits/sec    1    128 KBytes       
+[  5]  11.00-12.00  sec  5.61 MBytes  47.0 Mbits/sec    1    128 KBytes       
+[  5]  12.00-13.00  sec  4.47 MBytes  37.5 Mbits/sec    1    128 KBytes       
+[  5]  13.00-14.00  sec  5.58 MBytes  46.8 Mbits/sec    0    128 KBytes       
+[  5]  14.00-15.00  sec  2.73 MBytes  22.9 Mbits/sec    2    128 KBytes       
+[  5]  15.00-16.00  sec  6.34 MBytes  53.2 Mbits/sec    5    128 KBytes       
+[  5]  16.00-17.00  sec  7.41 MBytes  62.2 Mbits/sec    3    128 KBytes       
+[  5]  17.00-18.00  sec  2.45 MBytes  20.6 Mbits/sec    4    128 KBytes       
+[  5]  18.00-19.00  sec  4.47 MBytes  37.5 Mbits/sec    9    128 KBytes       
+[  5]  19.00-20.00  sec  5.54 MBytes  46.5 Mbits/sec    4    128 KBytes       
+[  5]  20.00-21.00  sec  5.79 MBytes  48.6 Mbits/sec    4    128 KBytes       
+[  5]  21.00-22.00  sec  4.69 MBytes  39.3 Mbits/sec    1    137 KBytes       
+[  5]  22.00-23.00  sec  4.35 MBytes  36.5 Mbits/sec    1    118 KBytes       
+[  5]  23.00-24.00  sec  4.10 MBytes  34.4 Mbits/sec    0    130 KBytes       
+[  5]  24.00-25.00  sec  4.84 MBytes  40.6 Mbits/sec    0    133 KBytes       
+[  5]  25.00-26.00  sec  2.94 MBytes  24.7 Mbits/sec    0    133 KBytes       
+[  5]  26.00-27.00  sec  3.55 MBytes  29.8 Mbits/sec    1    133 KBytes       
+[  5]  27.00-28.00  sec  1.90 MBytes  15.9 Mbits/sec    0    133 KBytes       
+[  5]  28.00-29.00  sec  1.59 MBytes  13.4 Mbits/sec    0    133 KBytes       
+[  5]  29.00-30.00  sec  1.96 MBytes  16.4 Mbits/sec    0    133 KBytes       
+[  5]  30.00-30.10  sec   376 KBytes  32.2 Mbits/sec    0    133 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  5]   0.00-30.10  sec   146 MBytes  40.8 Mbits/sec   53             sender
+[  5]   0.00-30.10  sec  0.00 Bytes  0.00 bits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+iperf3: interrupt - the server has terminated
+[  147.824099] rtw_core: loading out-of-tree module taints kernel.
+[  148.015878] rtw_8814ae 0000:01:00.0: enabling device (0000 -> 0002)
+[  148.042910] rtw_8814ae 0000:01:00.0: Firmware version 33.6.0, H2C version 6
+[  148.052203] rtw_8814ae 0000:01:00.0: hw cap: hci=0x00, bw=0x07, ptcl=0x03, ant_num=0, nss=3
+```
+
+</details>
+
+### AP 5G Test
+
+#### hostapd.conf
+
+Setup the configuration at /etc/hostapd/hostapd.conf
+
+```
+interface=wlan0
+driver=nl80211
+ctrl_interface=/var/run/hostapd
+
+ssid=AP-TEST
+hw_mode=a
+channel=36
+
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_passphrase=12345678
+
+ieee80211n=1
+ht_capab=[SHORT-GI-20][HT40+][SHORT-GI-40]
+
+ieee80211ac=1
+vht_oper_chwidth=1
+vht_oper_centr_freq_seg0_idx=42
+vht_capab=[SHORT-GI-20][SHORT-GI-40][VHT40+][SHORT-GI-80][MAX-A-MPDU-LEN-EXP7]
+
+wpa_pairwise=CCMP
+rsn_pairwise=CCMP
+```
+
+#### udhcpd.conf
+
+```
+start 192.168.175.2
+end 192.168.175.254
+interface wlan0
+max_leases 234
+opt router 192.168.175.1
+```
+
+#### Start AP Test
+
+```
+sudo hostapd /etc/hostapd/hostapd.conf -B
+Using interface wlan0 with hwaddr and ssid "AP-NAME"
+wlan0: interface state UNINITIALIZED->ENABLED
+wlan0: AP-ENABLED
+```
+
+#### Server & Client Test via iperf3 (PC-DUT)
+
+```
+iw wlan0 info
+Interface wlan0
+        ifindex 4
+        wdev 0x1
+        addr 
+        ssid AP-TEST
+        type AP
+        wiphy 0
+        channel 36 (5180 MHz), width: 80 MHz, center1: 5210 MHz
+        txpower 20.00 dBm
+```
+
+<details>
+
+<summary>iperf3</summary>
+
+```
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 192.168.175.86, port 60969
+[  5] local 192.168.175.1 port 5201 connected to 192.168.175.86 port 60970
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  5]   0.00-1.00   sec  47.3 MBytes   397 Mbits/sec    0    800 KBytes
+[  5]   1.00-2.00   sec  47.5 MBytes   399 Mbits/sec    0   1.03 MBytes
+[  5]   2.00-3.00   sec  52.5 MBytes   440 Mbits/sec    0   1.03 MBytes
+[  5]   3.00-4.00   sec  52.5 MBytes   441 Mbits/sec    0   1.03 MBytes
+[  5]   4.00-5.00   sec  53.8 MBytes   451 Mbits/sec    0   1.03 MBytes
+[  5]   5.00-6.00   sec  51.2 MBytes   430 Mbits/sec    0   1.03 MBytes
+[  5]   6.00-7.00   sec  53.8 MBytes   451 Mbits/sec    0   1.03 MBytes
+[  5]   7.00-8.00   sec  53.8 MBytes   451 Mbits/sec    0   1.03 MBytes
+[  5]   8.00-9.00   sec  55.0 MBytes   461 Mbits/sec    0   1.03 MBytes
+[  5]   9.00-10.00  sec  52.5 MBytes   441 Mbits/sec    0   1.03 MBytes
+[  5]  10.00-11.00  sec  53.8 MBytes   451 Mbits/sec    0   1.03 MBytes
+[  5]  11.00-12.00  sec  53.8 MBytes   450 Mbits/sec    0   1.03 MBytes
+[  5]  12.00-13.00  sec  50.0 MBytes   420 Mbits/sec    0   1.03 MBytes
+[  5]  13.00-14.00  sec  53.8 MBytes   451 Mbits/sec    0   1.03 MBytes
+[  5]  14.00-15.00  sec  53.8 MBytes   451 Mbits/sec    0   1.03 MBytes
+[  5]  15.00-16.00  sec  52.5 MBytes   440 Mbits/sec    0   1.03 MBytes
+[  5]  16.00-17.00  sec  53.8 MBytes   451 Mbits/sec    0   1.03 MBytes
+[  5]  17.00-18.00  sec  53.8 MBytes   451 Mbits/sec    0   1.03 MBytes
+[  5]  18.00-19.00  sec  52.5 MBytes   440 Mbits/sec    0   1.03 MBytes
+[  5]  19.00-20.00  sec  51.2 MBytes   430 Mbits/sec    0   1.03 MBytes
+[  5]  20.00-21.00  sec  50.0 MBytes   419 Mbits/sec    0   1.03 MBytes
+[  5]  21.00-22.00  sec  52.5 MBytes   440 Mbits/sec    0   1.03 MBytes
+[  5]  22.00-23.00  sec  53.8 MBytes   451 Mbits/sec    0   1.03 MBytes
+[  5]  23.00-24.00  sec  55.0 MBytes   461 Mbits/sec    0   1.03 MBytes
+[  5]  24.00-25.00  sec  55.0 MBytes   461 Mbits/sec    0   1.03 MBytes
+[  5]  25.00-26.00  sec  57.5 MBytes   482 Mbits/sec    0   1.03 MBytes
+[  5]  26.00-27.00  sec  50.0 MBytes   419 Mbits/sec    0   1.03 MBytes
+[  5]  27.00-28.00  sec  50.0 MBytes   419 Mbits/sec    0   1.03 MBytes
+[  5]  28.00-29.00  sec  51.2 MBytes   430 Mbits/sec    0   1.03 MBytes
+[  5]  29.00-30.00  sec  52.5 MBytes   440 Mbits/sec    0   1.03 MBytes
+[  5]  30.00-30.03  sec  1.25 MBytes   332 Mbits/sec    0   1.03 MBytes
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  5]   0.00-30.03  sec  1.54 GBytes   441 Mbits/sec    0             sender
+[  5]   0.00-30.03  sec  0.00 Bytes  0.00 bits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+```
+
+</details>
+
 ### Additional Windows 11 OS debug
 
 On Windows 11 with v2023.79.0619.2018 for RTL8814AE and Windows 10 64bit
@@ -440,27 +933,4 @@ On Windows 11 with v2023.79.0619.2018 for RTL8814AE and Windows 10 64bit
 |X64|<img src="../images/8814ae/rtl8814ae_x64.JPG" height="400"/>|<img src="../images/8814ae/rtl8814ae_x64_pcie.JPG" height="400"/>|
 |Net|<img src="../images/8814ae/rtl8814ae_x64_mac.JPG" height="400"/>|<img src="../images/8814ae/rtl8814ae_x64_speedtest.JPG" height="400"/>|
 
-### Network Manager - Band 2.4
-
-```
-wlan0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
-        ether e8:4e:06:78:86:6b  txqueuelen 1000  (Ethernet)
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-```
-
-### iwconfig 2.4
-
-```
-wlan0     IEEE 802.11  ESSID:off/any  
-          Mode:Managed  Access Point: Not-Associated   Tx-Power=20 dBm   
-          Retry short limit:7   RTS thr:off   Fragment thr:off
-          Encryption key:off
-          Power Management:on
-          
-```
-
-### Network Speed Test via Ookla - Band 2.4
-
-```
-```
+### End of Report
