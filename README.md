@@ -154,7 +154,7 @@ Remarks ✦: Tested Version: [bd8b1668b96a9d7848c0909f017b2e3eb87ad2b3](https://
 |PCIe|RTL8723 [D] E<p>NGFF Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8723x.ko<p>rtw_8723d.ko<p>rtw_8723de.ko|<img src="./images/8723de/rtl8723de_m2card_n2.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8723de_arm_a53_2)<p>STA 🟢<p>AP 🟢|
 |||||||
 |PCIe|RTL8814-GRIS [A] E<p>mini-PCIe Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8814a.ko<p>rtw_8814ae.ko|<img src="./images/8814ae/rtl8814ae_mpcie.JPG" width="200"/>|<p>✦ [ARM-A53 🟢](./rtl8814ae_arm_a53)<p>STA 🟡<p>AP 🟢|
-|PCIe|RTL8814-COMFAST [A] E<p>mini-PCIe Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8814a.ko<p>rtw_8814ae.ko|<img src="./images/8814ae/rtl8814ae_mpcie_comfast.JPG" width="200"/>|<p>✦ [ARM-A53 🟢](./rtl8814ae_arm_a53)<p>STA 🟡<p>AP 🟢|
+|PCIe|RTL8814-COMFAST [A] E<p>mini-PCIe Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8814a.ko<p>rtw_8814ae.ko|<img src="./images/8814ae/rtl8814ae_mpcie_comfast.JPG" width="200"/>|<p>✦ [ARM-A53 🟢](./rtl8814ae_arm_a53_comfast)<p>STA 🟢<p>AP 🟢|
 |||||||
 |PCIe|RTL8821 [C] E<p>NGFF Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8821c.ko<p>rtw_8821ce.ko|<img src="./images/8821ce/rtl8821ce_m2card.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8821ce_arm_a53)<p>STA 🟢<p>AP 🟢|
 |PCIe|RTL8821 [C] E<p>mini-PCIe Card|<p>5.4[ARM-A53]|<p>rtw_core.ko<p>rtw_pci.ko<p>rtw_8821c.ko<p>rtw_8821ce.ko|<img src="./images/8821ce/rtl8821ce_mpcie.JPG" width="200"/>|<p>[ARM-A53 🟢](./rtl8821ce_arm_a53_2)<p>STA 🟢<p>AP 🟢|
