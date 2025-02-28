@@ -9,9 +9,10 @@ Remarks: The GRIS card and EDUP actually just a branding which uses the same car
 1. [Hardware Setups](#0)
 2. [DUT Testbed Hardware Infos](#1)
 3. [Router Hardware Infos](#2)
-4. [Router <-> GRIS PCIe Card Test](#3)
-5. [Router <-> COMFAST-DUT1 PCIe Card Test](#4)
-6. [Router <-> EDUP PCIe Card Test](#5)
+4. [RTL8814AE eFUSE on different Brand](#3)
+5. [Router <-> GRIS PCIe Card Test](#4)
+6. [Router <-> COMFAST-DUT1 PCIe Card Test](#5)
+7. [Router <-> EDUP PCIe Card Test](#6)
 
 #### Some EDUP HW Images
 
@@ -25,7 +26,7 @@ Remarks: The GRIS card and EDUP actually just a branding which uses the same car
 |-|-|
 | ASUS RT-AC86U + GRIS |<img src="../images/8814ae/rtl8814ae_gris_asus.JPG" height="400"/>|
 | ASUS RT-AC86U + COMFAST-DUT1 |<img src="../images/8814ae/rtl8814ae_comfast_asus.JPG" height="400"/>|
-| ASUS RT-AC86U + EDUP |<img src="../images/8814ae/" height="400"/>|
+| ASUS RT-AC86U + EDUP |<img src="../images/8814ae/rtl8814ae_edup_asus.JPG" height="400"/>|
 
 ### DUT <a name="1"></a>
 
@@ -623,7 +624,7 @@ Reverse mode, remote host 192.168.2.1 is sending
 
 </details>
 
-### iperf3 @ COMFAST-DUT1 <=> ASUS <a name="4"></a>
+### iperf3 @ COMFAST-DUT1 <=> ASUS <a name="5"></a>
 
 #### connection info on DUT side
 
@@ -1055,7 +1056,7 @@ Reverse mode, remote host 192.168.2.1 is sending
 
 </details>
 
-### iperf3 @ EDUP <=> ASUS <a name="5"></a>
+### iperf3 @ EDUP <=> ASUS <a name="6"></a>
 
 #### connection info on DUT side
 
