@@ -146,7 +146,9 @@ Low-Speed / High-Speed profile (4bits) is deployed with RTW88 driver
 
 Remarks ★: Tested Version: [58638cb909377bed524ac9aad0ce7cefc1a037da](https://github.com/lwfinger/rtw88/tree/386382ace137f5209e8e83a4cf2e044bf52e8b38) 
 
-Remarks ✦: Tested Version: [bd8b1668b96a9d7848c0909f017b2e3eb87ad2b3](https://github.com/lwfinger/rtw88/tree/bd8b1668b96a9d7848c0909f017b2e3eb87ad2b3) 
+Remarks ✦: Tested Version: [bd8b1668b96a9d7848c0909f017b2e3eb87ad2b3](https://github.com/lwfinger/rtw88/tree/bd8b1668b96a9d7848c0909f017b2e3eb87ad2b3)
+
+Additional Test Report: [RTL8814AE iperf3 tests on ARM-A53](./rtl8814ae_arm_a53_5g_trxmax)
 
 |Phy Interface|<p>Chip #<p>HW Type|DUT Kernel #|Driver Tree|HW Image|Status|
 |:---:|:---|:---|:---:|:---:|---:|
